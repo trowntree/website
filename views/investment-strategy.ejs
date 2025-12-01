@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how Solvaris combines core renewable assets in mature European markets with high-yield development in underpenetrated regions—driven by deep BESS expertise, grid-integration, and innovative capital structures.">
+  <meta name="keywords" content="investment strategy, renewable energy, battery storage, solar energy, Solvaris">
+  <meta name="author" content="Solvaris">
+  <meta property="og:title" content="Investment Strategy | Solvaris">
+  <meta property="og:description" content="Learn how Solvaris combines core renewable assets in mature European markets with high-yield development in underpenetrated regions—driven by deep BESS expertise, grid-integration, and innovative capital structures.">
+  <meta property="og:image" content="/images/investment-strategy-og.jpg">
+  <title>Investment Strategy | Solvaris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    #hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0A1F44 0%, #0D9488 100%);
+    }
+    #hero .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/images/energy-pattern.png') center/cover no-repeat, rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      pointer-events: none;
+    }
+    #hero .hero-content {
+      position: relative;
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+      animation: fadeOut 3s forwards;
+    }
+    .loader::after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border: 4px solid #FBBF24;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+    .section-heading {
+      color: #0A1F44;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .subsection-heading {
+      color: #1F2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .body-text {
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .chart-container {
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+    #eu-map {
+      height: 500px;
+      width: 100%;
+    }
+    .esg-card {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, Robin);
+      padding: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .esg-card:hover {
+      transform: translateY(-5px);
+    }
+    @media (max-width: 768px) {
+      #hero { height: 60vh; }
+      #hero h1 { font-size: 2rem; }
+      #hero p { font-size: 1.25rem; max-width: 90%; margin: 0 auto; }
+      .section-heading { font-size: 1.75rem; }
+      .subsection-heading { font-size: 1.25rem; }
+      .body-text { font-size: 0.95rem; }
+      .chart-container { max-width: 100%; }
+      #eu-map { height: 300px; }
+      .grid-cols-1 md:grid-cols-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      #hero h1 { font-size: 1.75rem; }
+      #hero p { font-size: 1rem; }
+      .section-heading { font-size: 1.5rem; }
+      .subsection-heading { font-size: 1.125rem; }
+      .body-text { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Navigation Bar -->
+  <header id="navbar" class="fixed w-full z-20 transition-all duration-300 bg-white/90" role="banner">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center">
+        <a href="#home" class="flex items-center space-x-2">
+          <img src="images/logoS.png" alt="Solvaris Logo" class="logo" style="width: 150px; height: auto;">
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
+        <a href="#home" class="nav-link text-gray-800 font-medium transition-colors duration-200">Home</a>
+        <a href="#about" class="nav-link text-gray-800 font-medium transition-colors duration-200">About</a>
+        <a href="#investments" class="nav-link text-gray-800 font-medium transition-colors duration-200">Investments</a>
+        <a href="#impact" class="nav-link text-gray-800 font-medium transition-colors duration-200">Impact</a>
+        <a href="#projects" class="nav-link text-gray-800 font-medium transition-colors duration-200">Projects</a>
+        <a href="#news" class="nav-link text-gray-800 font-medium transition-colors duration-200">News</a>
+        <a href="#careers" class="nav-link text-gray-800 font-medium transition-colors duration-200">Careers</a>
+        <a href="#contact" class="nav-link text-gray-800 font-medium transition-colors duration-200">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 rounded" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <nav class="flex flex-col p-4 space-y-4" role="navigation" aria-label="Mobile navigation">
+        <a href="#home" class="nav-link text-gray-800 font-medium" tabindex="0">Home</a>
+        <a href="#about" class="nav-link text-gray-800 font-medium" tabindex="0">About</a>
+        <a href="#investments" class="nav-link text-gray-800 font-medium" tabindex="0">Investments</a>
+        <a href="#impact" class="nav-link text-gray-800 font-medium" tabindex="0">Impact</a>
+        <a href="#projects" class="nav-link text-gray-800 font-medium" tabindex="0">Projects</a>
+        <a href="#news" class="nav-link text-gray-800 font-medium" tabindex="0">News</a>
+        <a href="#careers" class="nav-link text-gray-800 font-medium" tabindex="0">Careers</a>
+        <a href="#contact" class="nav-link text-gray-800 font-medium" tabindex="0">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="loader"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container mx-auto px-6 text-left text-white">
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4" style="font-size: 2.5rem;">Investment Strategy</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl body-text" data-aos="fade-up" data-aos-delay="500">Diversified, institutional-grade renewable energy & storage platform—core stability in mature markets, satellite growth in high-yield regions.</p>
+      <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 items-center" data-aos="fade-up" data-aos-delay="700">
+        <a href="/assets/investment-strategy.pdf" class="px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-colors duration-200 w-full sm:w-auto text-center" style="color: #0A1F44;">Download Detailed Strategy PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Summary Section -->
+  <section id="executive-summary" class="bg-gray-50 py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="section-heading mb-6" data-aos="fade-up">Executive Summary</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <p class="body-text leading-relaxed mb-4">Solvaris delivers institutional investors a diversified, high-yield portfolio of utility-scale renewable and storage assets across Europe. By integrating a <strong>“core” allocation</strong> in mature markets (Germany, United Kingdom, Netherlands) with a <strong>“satellite” development pipeline</strong> in underpenetrated high-yield regions (Poland, Romania, Baltics), we achieve both stable, inflation-linked cash flows and superior upside—underpinned by robust risk controls and ESG integrity.</p>
+        </div>
+        <div data-aos="fade-left" data-aos-delay="200">
+          <img src="/images/core-satellite-icon.png" alt="Core-Satellite Icon" class="w-32 h-32 mx-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core-Satellite Portfolio Structure Section -->
+  <section id="portfolio-structure" class="py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="section-heading mb-12 text-center" data-aos="fade-up">Core–Satellite Portfolio Structure</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div data-aos="fade-right">
+          <h3 class="subsection-heading mb-4">Core (40–60 % of Equity)</h3>
+          <p class="body-text mb-2"><strong>Markets:</strong> Germany, United Kingdom, Netherlands</p>
+          <p class="body-text mb-2"><strong>Asset Types:</strong> Operational or brownfield solar, wind, and BESS (1 – 4 hr duration)</p>
+          <p class="body-text mb-2"><strong>Return Target:</strong> 6 – 8 % unlevered IRR; inflation-linked feed-in tariffs or long-term PPAs</p>
+          <p class="body-text mb-2"><strong>Strategic Rationale:</strong></p>
+          <ul class="body-text list-disc list-inside">
+            <li>Predictable, de-risked cash flows backed by creditworthy offtakers</li>
+            <li>Active secondary market for potential partial exits or refinancing</li>
+            <li>Regulatory transparency and streamlined permitting reduce execution risk</li>
+          </ul>
+          <h3 class="subsection-heading mt-8 mb-4">Satellite (40–60 % of Equity)</h3>
+          <p class="body-text mb-2"><strong>Markets:</strong> Poland, Romania, Bulgaria, Croatia, Baltic States</p>
+          <p class="body-text mb-2"><strong>Asset Types:</strong> Greenfield or RTB solar + deep BESS (8 – 12 hr duration), wind with co-located storage pilots</p>
+          <p class="body-text mb-2"><strong>Return Target:</strong> 12 – 15 % unlevered IRR</p>
+          <p class="body-text mb-2"><strong>Strategic Rationale:</strong></p>
+          <ul class="body-text list-disc list-inside">
+            <li>First-mover advantage in high-yield jurisdictions with favorable subsidy regimes or merchant upside</li>
+            <li>Limited competition enables rapid land acquisition and permitting</li>
+            <li>Proprietary origination engine sources off-market sites for consistent deal flow</li>
+          </ul>
+        </div>
+        <div class="chart-container" data-aos="fade-left" data-aos-delay="200">
+          <canvas id="core-satellite-chart"></canvas>
+          <figcaption class="text-center body-text mt-2">Equity Allocation: Core (Mature Markets) vs. Satellite (High-Yield Markets)</figcaption>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep BESS & Long-Duration Storage Focus Section -->
+  <section id="bess-focus" class="bg-gray-50 py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="section-heading mb-12 text-center" data-aos="fade-up">Deep BESS & Long-Duration Storage Focus</h2>
+      <div class="space-y-8">
+        <div data-aos="fade-up">
+          <h3 class="subsection-heading mb-4">Integrated Value-Stack Optimization</h3>
+          <p class="body-text">Ancillary services (FCR, aFRR), capacity tenders, and merchant arbitrage diversify revenue streams. “Floor + Upside” contractual structures guarantee minimum revenues while sharing merchant upside with LPs.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3 class="subsection-heading mb-4">Long-Duration Storage Pilots (8–12+ hr)</h3>
+          <p class="body-text">Target Northern/Eastern European markets where winter intermittency drives demand for extended-duration solutions. Partner with technology providers (flow batteries, hybrid hydrogen + BESS) to pre-empt emerging regulatory incentives.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <h3 class="subsection-heading mb-4">Grid-Engineering Expertise</h3>
+          <p class="body-text">In-house team negotiates firm connection agreements with TSOs/DSOs (e.g., TenneT, Liander). Curtailed risk mitigation through co-location design, congestion forecasting, and network reinforcement planning.</p>
+        </div>
+        <div class="chart-container" data-aos="fade-up" data-aos-delay="300">
+          <canvas id="bess-revenue-chart"></canvas>
+          <figcaption class="text-center body-text mt-2">Sample Revenue Stack for Deep-Duration BESS</figcaption>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive EU Map Section -->
+  <section id="eu-map-section" class="py-20 px-6">
+    <div class="container mx-auto">
+      <div id="eu-map" data-aos="fade-up"></div>
+      <figcaption class="text-center body-text mt-4">Hover over each country to view category (Core vs. Satellite) and Target IRR.</figcaption>
+    </div>
+  </section>
+
+  <!-- Proprietary Origination & Asset Management Section -->
+  <section id="origination-management" class="bg-gray-50 py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="section-heading mb-12 text-center" data-aos="fade-up">Proprietary Origination & Asset Management</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div data-aos="fade-right">
+          <h3 class="subsection-heading mb-4">AI-Enabled Origination Engine</h3>
+          <p class="body-text">Leverage satellite imagery and grid-data analytics to identify high-potential sites with minimal curtailment risk. Integrate a digital tender portal and local partnerships to capture off-market opportunities and maintain a proprietary pipeline.</p>
+        </div>
+        <div data-aos="fade-left" data-aos-delay="100">
+          <h3 class="subsection-heading mb-4">Digital Asset Management Platform</h3>
+          <p class="body-text">Real-time SCADA integration, predictive maintenance alerts, and automated O&M reporting. Comprehensive ESG dashboard tracking: carbon avoidance, biodiversity impact, local community benefits. Investor portal providing transparent KPIs: uptime, degradation rates, revenue forecasts, risk-adjusted returns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capital Structure & Risk Management Section -->
+  <section id="capital-structure" class="py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="section-heading mb-12 text-center" data-aos="fade-up">Capital Structure & Risk Management</h2>
+      <div class="space-y-8">
+        <div data-aos="fade-up">
+          <h3 class="subsection-heading mb-4">Bespoke Fund Vehicle Design</h3>
+          <p class="body-text">“Floor + Upside” revenue contracts align risk-reward between LPs and the platform. Co-investment and managed-account options accommodate large ticket sizes (€ 50 – 200 M) and specific liability profiles.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3 class="subsection-heading mb-4">Dynamic Rebalancing</h3>
+          <p class="body-text">Quarterly portfolio reviews to adjust core vs. satellite allocations based on market signals (e.g., power-price spreads, subsidy announcements). Reallocate capital into mature markets when pricing is favorable and into emerging regions upon RTB milestone achievements.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <h3 class="subsection-heading mb-4">Hedging & FX Framework</h3>
+          <p class="body-text">Power price hedges (collars, swaps) to manage merchant exposure in satellite markets. Cross-currency interest rate swaps to mitigate foreign-exchange risk and align debt servicing with revenue currencies.</p>
+        </div>
+        <div class="chart-container" data-aos="fade-up" data-aos-delay="300">
+          <canvas id="allocation-flow-chart"></canvas>
+          <figcaption class="text-center body-text mt-2">Capital Allocation & Hedging Structure</figcaption>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESG & Impact Integration Section -->
+  <section id="esg-integration" class="bg-gray-50 py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="section-heading mb-12 text-center" data-aos="fade-up">ESG & Impact Integration</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div data-aos="fade-right">
+          <h3 class="subsection-heading mb-4">Measurable, Transparent ESG</h3>
+          <p class="body-text">Asset-level carbon intensity modeling comparing real-time generation to fossil-fuel benchmarks. Biodiversity and land-restoration metrics: hectares restored, nitrogen runoff reduction, local job creation.</p>
+        </div>
+        <div data-aos="fade-left" data-aos-delay="100">
+          <h3 class="subsection-heading mb-4">Investor-Grade Reporting</h3>
+          <p class="body-text">Quarterly ESG scorecards with verifiable third-party audits. Alignment with EU Taxonomy, SFDR, and CSRD disclosures to satisfy LP compliance requirements.</p>
+        </div>
+        <div class="esg-card p-6 md:col-span-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
+              <p class="text-2xl font-bold text-green-600">25,000</p>
+              <p class="body-text">CO₂ Avoidance (t/year)</p>
+            </div>
+            <div class="text-center">
+              <p class="text-2xl font-bold text-green-600">100</p>
+              <p class="body-text">Biodiversity Impact (ha restored)</p>
+            </div>
+            <div class="text-center">
+              <p class="text-2xl font-bold text-green-600">50</p>
+              <p class="body-text">Local Jobs Created</p>
+            </div>
+            <div class="text-center">
+              <p class="text-2xl font-bold text-green-600">85/100</p>
+              <p class="body-text">ESG Score</p>
+            </div>
+          </div>
+          <figcaption class="text-center body-text mt-4">Real-Time ESG Metrics & Impact</figcaption>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="py-20 px-6 bg-green-800 text-white">
+    <div class="container mx-auto text-center">
+      <h2 class="section-heading mb-12" data-aos="fade-up">Get Involved</h2>
+      <p class="body-text mb-8 max-w-3xl mx-auto">For more information or to discuss co-investment opportunities, please contact our Investor Relations team at <a href="mailto:investor.relations@solvaris.com" class="underline text-yellow-400 hover:text-yellow-500">investor.relations@solvaris.com</a> or call <a href="tel:+31201234567" class="underline text-yellow-400 hover:text-yellow-500">+31 (0)20 123 4567</a>. Download our full Investment Strategy PDF for detailed financial models, project case studies, and ESG documentation.</p>
+      <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 justify-center" data-aos="fade-up" data-aos-delay="200">
+        <a href="mailto:investor.relations@solvaris.com" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-800 transition-colors duration-200 w-full sm:w-auto text-center">Contact Investor Relations</a>
+        <a href="/assets/investment-strategy.pdf" class="px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500 transition-colors duration-200 w-full sm:w-auto text-center" style="color: #0A1F44;">Download Strategy PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Solvaris</h3>
+        <p class="text-gray-400">Pioneering the solar energy revolution with innovative solar and battery storage solutions.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
+          <li><a href="#investments" class="text-gray-400 hover:text-white transition-colors duration-200">Investments</a></li>
+          <li><a href="#impact" class="text-gray-400 hover:text-white transition-colors duration-200">Impact</a></li>
+          <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-200">Projects</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="#news" class="text-gray-400 hover:text-white transition-colors duration-200">News</a></li>
+          <li><a href="#careers" class="text-gray-400 hover:text-white transition-colors duration-200">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:info@solvaris.com" class="text-gray-400 hover:text-white transition-colors duration-200">info@solvaris.com</a></li>
+          <li><a href="tel:+31201234567" class="text-gray-400 hover:text-white transition-colors duration-200">+31 (0)20 123 4567</a></li>
+          <li class="text-gray-400">Keizersgracht 123, 1015 CJ Amsterdam, Netherlands</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto mt-12 text-center">
+      <p class="text-gray-400">© 2025 Solvaris. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    
+    // Core-Satellite Pie Chart
+    const ctxPie = document.getElementById('core-satellite-chart').getContext('2d');
+    new Chart(ctxPie, {
+      type: 'doughnut',
+      data: {
+        labels: ['Core (40%–60%)', 'Satellite (40%–60%)'],
+        datasets: [{
+          data: [50, 50],
+          backgroundColor: ['#0A1F44', '#0D9488'],
+          hoverOffset: 20
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${context.raw}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // BESS Revenue Stack Bar Chart
+    const ctxBar = document.getElementById('bess-revenue-chart').getContext('2d');
+    new Chart(ctxBar, {
+      type: 'bar',
+      data: {
+        labels: ['8 hr BESS', '12 hr BESS'],
+        datasets: [
+          { label: 'Energy Arbitrage', data: [35, 30], backgroundColor: '#0A1F44' },
+          { label: 'Ancillary Services', data: [25, 25], backgroundColor: '#1E3A8A' },
+          { label: 'Capacity Payments', data: [20, 20], backgroundColor: '#3B82F6' },
+          { label: 'Merchant Upside', data: [20, 25], backgroundColor: '#93C5FD' }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: { x: { stacked: true }, y: { stacked: true } },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.dataset.label}: ${context.raw} €/MWh`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Allocation Flow Chart (Sankey simulation with Chart.js)
+    const ctxFlow = document.getElementById('allocation-flow-chart').getContext('2d');
+    new Chart(ctxFlow, {
+      type: 'bar',
+      data: {
+        labels: ['Equity', 'Core Assets', 'Satellite Assets', 'Hedging'],
+        datasets: [{
+          data: [100, 50, 50, 20],
+          backgroundColor: ['#FBBF24', '#0A1F44', '#0D9488', '#374151']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${context.raw}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // EU Map
+    const map = L.map('eu-map').setView([54, 15], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    const coreMarkets = ['DE', 'GB', 'NL'];
+    const satelliteMarkets = ['PL', 'RO', 'BG', 'HR', 'EE', 'LV', 'LT'];
+    const countryData = {
+      'DE': { category: 'Core', IRR: '6–8%', note: 'Operational assets' },
+      'GB': { category: 'Core', IRR: '6–8%', note: 'Operational assets' },
+      'NL': { category: 'Core', IRR: '6–8%', note: 'Operational assets' },
+      'PL': { category: 'Satellite', IRR: '12–15%', note: 'Active BESS pipeline' },
+      'RO': { category: 'Satellite', IRR: '12–15%', note: 'Active BESS pipeline' },
+      'BG': { category: 'Satellite', IRR: '12–15%', note: 'Active BESS pipeline' },
+      'HR': { category: 'Satellite', IRR: '12–15%', note: 'Active BESS pipeline' },
+      'EE': { category: 'Satellite', IRR: '12–15%', note: 'Active BESS pipeline' },
+      'LV': { category: 'Satellite', IRR: '12–15%', note: 'Active BESS pipeline' },
+      'LT': { category: 'Satellite', IRR: '12–15%', note: 'Active BESS pipeline' }
+    };
+
+    const geoJsonLayer = L.geoJson(null, {
+      style: function(feature) {
+        const countryCode = feature.properties.iso_a2;
+        return {
+          fillColor: coreMarkets.includes(countryCode) ? '#0A1F44' : satelliteMarkets.includes(countryCode) ? '#0D9488' : '#D1D5DB',
+          weight: 1,
+          opacity: 1,
+          color: '#F3F4F6',
+          fillOpacity: 0.7
+        };
+      },
+      onEachFeature: function(feature, layer) {
+        const countryCode = feature.properties.iso_a2;
+        if (countryData[countryCode]) {
+          const { category, IRR, note } = countryData[countryCode];
+          layer.bindTooltip(`<strong>${feature.properties.name}</strong><br>Category: ${category}<br>Target IRR: ${IRR}<br>${note}`, { sticky: true });
+          layer.on('click', function() {
+            alert(`Market Snapshot for ${feature.properties.name}\nCurrent Power Prices: Sample data\nRegulatory Highlights: Sample data\nSample Projects: Sample data`);
+          });
+        }
+      }
+    }).addTo(map);
+
+    // Load GeoJSON data
+    fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+      .then(response => response.json())
+      .then(data => geoJsonLayer.addData(data));
+
+    // Lazy-load charts and map
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('canvas').forEach(canvas => {
+            canvas.dispatchEvent(new Event('chart-init'));
+          });
+          if (entry.target.id === 'eu-map') {
+            map.invalidateSize();
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.chart-container, #eu-map').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
