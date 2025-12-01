@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solvaris - Pioneering renewable energy and microgrid solutions for a sustainable future.">
+  <meta name="keywords" content="renewable energy, microgrids, solar energy, battery storage, sustainability, Solvaris">
+  <meta name="author" content="Solvaris">
+  <title>Solvaris - Pioneering Renewable Energy Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    #home {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    #home .hero-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Clip any overflow from the scaled iframe */
+      z-index: 1;
+    }
+    #home .hero-media iframe {
+      width: 110%; /* Scale slightly larger to cover the area */
+      height: 110%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the iframe */
+      border: none;
+      object-fit: cover; /* Ensure video fills container */
+    }
+    #home .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Faded dark black */
+      z-index: 2;
+      pointer-events: none;
+    }
+    #home .hero-content {
+      position: relative;
+      z-index: 4;
+      pointer-events: auto;
+      width: 100%; /* Ensure content takes full width */
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: auto;
+    }
+    /* Loader Styles */
+    .loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+      animation: fadeOut 3s forwards;
+    }
+    .loader::after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border: 4px solid #10b981;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+    .typed-text {
+      display: inline-block;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(34, end), blink 0.75s step-end infinite;
+      line-height: 1.2;
+      max-width: 100%; /* Prevent overflow */
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    /* Navbar Styles */
+    #navbar {
+      background: rgba(255, 255, 255, 0.9);
+      transition: background 0.3s ease;
+    }
+    .header-scrolled {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link {
+      position: relative;
+      padding: 8px 12px;
+      transition: color 0.2s ease, background 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #10b981 !important;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 4px;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 4px;
+      left: 12px;
+      background: #10b981;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: calc(100% - 24px);
+    }
+    .nav-link.active {
+      color: #10b981 !important;
+      font-weight: 700;
+    }
+    .nav-link:focus {
+      outline: 2px solid #10b981;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    #mobile-menu {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    #mobile-menu.open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      .nav-link { padding: 10px 16px; }
+      .container { padding-left: 1rem; padding-right: 1rem; }
+      #home .hero-content {
+        padding: 1rem;
+        text-align: center;
+      }
+      .typed-text {
+        font-size: 2rem;
+        white-space: normal;
+        line-height: 1.3;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      #home h1 {
+        font-size: 2rem;
+      }
+      #home p {
+        font-size: 1.25rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #home .flex {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      #home .flex a {
+        width: 280px;
+        min-width: 280px;
+        padding: 0.75rem 1rem;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 1rem;
+      }
+      #home .hero-media iframe {
+        width: 500%; /* Increased to ensure full-screen coverage */
+        height: 500%;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .typed-text {
+        font-size: 1.75rem;
+        line-height: 1.4;
+      }
+      #home h1 {
+        font-size: 1.75rem;
+      }
+      #home p {
+        font-size: 1rem;
+      }
+      #home .hero-content {
+        padding: 0.75rem;
+      }
+      #home .flex a {
+        width: 100%;
+        min-width: 240px;
+        padding: 0.75rem 1rem;
+      }
+    }
+
+    /* Logo section styles */
+    .logo-carousel {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    .logo-carousel::before,
+    .logo-carousel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+    }
+    .logo-carousel::before {
+      left: 0;
+      background: linear-gradient(to right, white, transparent);
+    }
+    .logo-carousel::after {
+      right: 0;
+      background: linear-gradient(to left, white, transparent);
+    }
+    .logos {
+      display: flex;
+      animation: scroll-left 30s linear infinite;
+    }
+    .logo-item {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    @media (max-width: 768px) {
+      .logo-item {
+        width: 150px;
+        height: 80px;
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <header id="navbar" class="fixed w-full z-20 transition-all duration-300" role="banner">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center">
+        <a href="#home" class="flex items-center space-x-2">
+          <img src="images/logoS.png" alt="Solvaris Logo" class="logo" style="width: 150px; height: auto;">
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
+        <a href="#home" class="nav-link text-gray-800 font-medium transition-colors duration-200">Home</a>
+        <a href="#about" class="nav-link text-gray-800 font-medium transition-colors duration-200">About</a>
+        <a href="#vision" class="nav-link text-gray-800 font-medium transition-colors duration-200">Our Vision</a>
+        <a href="#commitment" class="nav-link text-gray-800 font-medium transition-colors duration-200">Commitment</a>
+        <a href="#news" class="nav-link text-gray-800 font-medium transition-colors duration-200">News</a>
+        <a href="#careers" class="nav-link text-gray-800 font-medium transition-colors duration-200">Careers</a>
+        <a href="#contact" class="nav-link text-gray-800 font-medium transition-colors duration-200">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 rounded" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <nav class="flex flex-col p-4 space-y-4" role="navigation" aria-label="Mobile navigation">
+        <a href="#home" class="nav-link text-gray-800 font-medium" tabindex="0">Home</a>
+        <a href="#about" class="nav-link text-gray-800 font-medium" tabindex="0">About</a>
+        <a href="#vision" class="nav-link text-gray-800 font-medium" tabindex="0">Our Vision</a>
+        <a href="#commitment" class="nav-link text-gray-800 font-medium" tabindex="0">Commitment</a>
+        <a href="#news" class="nav-link text-gray-800 font-medium" tabindex="0">News</a>
+        <a href="#careers" class="nav-link text-gray-800 font-medium" tabindex="0">Careers</a>
+        <a href="#contact" class="nav-link text-gray-800 font-medium" tabindex="0">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home">
+    <div class="hero-media">
+      <iframe 
+          src="https://player.vimeo.com/video/1006636061?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen
+      ></iframe>
+    </div>
+    <div class="loader"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container mx-auto px-6 text-left text-white">
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4">
+        <span class="typed-text">Empowering a Sustainable Future</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="300">Solvaris is dedicated to pioneering renewable energy and microgrid solutions for global sustainability.</p>
+      <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 items-center" data-aos="fade-up" data-aos-delay="500">
+        <a href="#vision" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 w-full sm:w-auto text-center">Discover Our Vision</a>
+        <a href="#contact" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-800 transition-colors duration-200 w-full sm:w-auto text-center">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="bg-gray-50 py-20 px-6">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-4xl font-bold mb-6">About Solvaris</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Headquartered in Amsterdam, Netherlands, Solvaris is a forward-thinking renewable energy company poised to lead the development of solar farms, Battery Energy Storage Systems (BESS), and microgrid solutions. Our team of experienced professionals is committed to advancing clean energy technologies to support a sustainable future.</p>
+          <p class="text-gray-600 leading-relaxed">With a vision to empower communities through innovative energy solutions, Solvaris is preparing to deliver scalable and resilient renewable energy systems. We are actively building expertise and partnerships to drive the global energy transition.</p>
+        </div>
+        <div data-aos="fade-left" data-aos-delay="200">
+          <img src="images/solvaris-team.jpg" alt="Solvaris Team" class="w-full rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-12 px-6">
+    <div class="container mx-auto">
+      <div class="logo-carousel">
+        <div class="logos flex" style="width: 200%;">
+          <div class="logo-item"><img src="images/logo1.png" alt="Logo 1" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo2.png" alt="Logo 2" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo3.png" alt="Logo 3" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo4.png" alt="Logo 4" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo5.png" alt="Logo 5" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo6.png" alt="Logo 6" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo7.png" alt="Logo 7" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo8.png" alt="Logo 8" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo1.png" alt="Logo 1" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo2.png" alt="Logo 2" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo3.png" alt="Logo 3" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo4.png" alt="Logo 4" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo5.png" alt="Logo 5" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo6.png" alt="Logo 6" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo7.png" alt="Logo 7" class="max-h-full max-w-full"></div>
+          <div class="logo-item"><img src="images/logo8.png" alt="Logo 8" class="max-h-full max-w-full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vision" class="bg-white py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">Our Vision</h2>
+      <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">We aim to transform energy access through cutting-edge solar, battery storage, and microgrid technologies.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card" data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-3">Solar Energy</h3>
+          <p class="text-gray-600 mb-4">Harnessing the power of the sun to provide clean, renewable energy for communities and industries worldwide.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-2xl font-semibold mb-3">Battery Storage</h3>
+          <p class="text-gray-600 mb-4">Developing advanced Battery Energy Storage Systems (BESS) to enhance grid reliability and energy efficiency.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-semibold mb-3">Microgrids</h3>
+          <p class="text-gray-600 mb-4">Designing decentralized microgrid solutions to deliver resilient and sustainable power to underserved regions.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <img src="images/pic1.png" alt="Solar Energy" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/pic2.png" alt="Battery Storage" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+        <img src="images/pic3.jpg" alt="Microgrids" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
+      </div>
+    </div>
+  </section>
+
+  <section id="commitment" class="bg-green-800 text-white py-20 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Our Commitment</h2>
+      <p class="text-xl text-gray-100 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Solvaris is dedicated to creating a sustainable energy future by partnering with stakeholders to deliver innovative and accessible renewable energy solutions.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card bg-green-900" data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-3 text-white">Sustainability</h3>
+          <p class="text-gray-200 mb-4">Committed to reducing carbon footprints through clean energy innovation.</p>
+        </div>
+        <div class="card bg-green-900" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-2xl font-semibold mb-3 text-white">Community Impact</h3>
+          <p class="text-gray-200 mb-4">Focused on empowering communities with reliable and affordable energy access.</p>
+        </div>
+        <div class="card bg-green-900" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-semibold mb-3 text-white">Innovation</h3>
+          <p class="text-gray-200 mb-4">Leveraging cutting-edge technology to drive the global energy transition.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <img src="images/com1.png" alt="Sustainability" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/com2.png" alt="Community Impact" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+        <img src="images/com3.png" alt="Innovation" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class="container mx-auto py-20 px-6">
+    <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Latest News</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card" data-aos="fade-up">
+        <p class="text-green-600 font-semibold text-sm mb-2">July 2025</p>
+        <h3 class="text-xl font-semibold mb-3">Solvaris Team Expansion</h3>
+        <p class="text-gray-600 mb-4">Solvaris welcomes leading renewable energy experts to our team, strengthening our capability to deliver innovative solutions.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-green-600 font-semibold text-sm mb-2">June 2025</p>
+        <h3 class="text-xl font-semibold mb-3">Research and Development Initiative</h3>
+        <p class="text-gray-600 mb-4">Solvaris launches R&D efforts to explore advanced microgrid and storage technologies for future deployment.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-green-600 font-semibold text-sm mb-2">May 2025</p>
+        <h3 class="text-xl font-semibold mb-3">Strategic Partnership Development</h3>
+        <p class="text-gray-600 mb-4">Solvaris begins forming alliances with global technology providers to support our upcoming renewable energy projects.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <p class="text-green-600 font-semibold text-sm mb-2">December 2024</p>
+        <h3 class="text-xl font-semibold mb-3">Industry Engagement</h3>
+        <p class="text-gray-600 mb-4">Solvaris joins renewable energy associations to stay at the forefront of industry innovation and collaboration.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <p class="text-green-600 font-semibold text-sm mb-2">July 2024</p>
+        <h3 class="text-xl font-semibold mb-3">Market Analysis Completed</h3>
+        <p class="text-gray-600 mb-4">Solvaris completes comprehensive market studies to identify key opportunities for renewable energy development.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
+        <p class="text-green-600 font-semibold text-sm mb-2">January 2024</p>
+        <h3 class="text-xl font-semibold mb-3">Solvaris Founded</h3>
+        <p class="text-gray-600 mb-4">Solvaris is established in Amsterdam with a mission to lead the renewable energy revolution.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="careers" class="bg-gray-50 py-20 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Join Our Team</h2>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Join our passionate team to shape the future of renewable energy and microgrid solutions.</p>
+      <a href="/careers" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200" data-aos="fade-up" data-aos-delay="400">View Open Positions</a>
+    </div>
+  </section>
+
+  <section id="contact" class="container mx-auto py-20 px-6">
+    <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Connect with Us</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="card" data-aos="fade-right">
+        <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+        <div class="space-y-6">
+          <div>
+            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+            <input type="text" id="name" class="w-full border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600" placeholder="Your Name" required>
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+            <input type="email" id="email" class="w-full border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600" placeholder="Your Email" required>
+          </div>
+          <div>
+            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+            <textarea id="message" class="w-full border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="button" onclick="submitForm()" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-200">Submit</button>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+        <p class="text-gray-600 mb-4">We’re here to collaborate on building a sustainable energy future.</p>
+        <div class="space-y-4">
+          <p><strong>Email:</strong> <a href="mailto:mauritsengelsman@gmail.com" class="text-green-600 hover:underline">mauritsengelsman@gmail.com</a></p>
+          <p><strong>Address:</strong> Sumatrakade, 1019 RH Amsterdam, Netherlands</p>
+        </div>
+        <div class="mt-8">
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.linkedin.com/company/solvaris-energy-impact/" target="_blank" class="text-gray-600 hover:text-green-600">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+            </a>
+            <a href="https://twitter.com/solvaris" target="_blank" class="text-gray-600 hover:text-green-600">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.1H5.756a2 2 0 0 0-2 2v13.8a2 2 0 0 0 2 2h12.488a2 2 0 0 0 2-2V4.1a2 2 0 0 0-2-2zm-6.99 14.894c-2.318 0-4.705-1.103-7.024-3.422-.318-.318-.497-.744-.497-1.199V4.1c0-.456.179-.882.497-1.2 2.319-2.319 4.706-3.422 7.024-3.422h6.488c2.319 0 4.706 1.103 7.024 3.422.318.318.497.744.497 1.2v9.8c0 .456-.179.882-.497 1.2-2.319 2.319-4.706 3.422-7.024 3.422zm-1.344-2.644c-1.352 0-2.746-.648-3.898-1.8-.318-.318-.497-.744-.497-1.2v-5.2c0-.456.179-.882.497-1.2 1.152-1.152 2.546-1.8 3.898-1.8h3.488c1.352 0 2.746.648 3.898 1.8.318.318.497.744.497 1.2v5.2c0 .456-.179.882-.497 1.2-1.152 1.152-2.546 1.8-3.898 1.8z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Solvaris</h3>
+        <p class="text-gray-400">Pioneering renewable energy and microgrid solutions for a sustainable tomorrow.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
+          <li><a href="#vision" class="text-gray-400 hover:text-white transition-colors duration-200">Our Vision</a></li>
+          <li><a href="#commitment" class="text-gray-400 hover:text-white transition-colors duration-200">Commitment</a></li>
+          <li><a href="#news" class="text-gray-400 hover:text-white transition-colors duration-200">News</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="#news" class="text-gray-400 hover:text-white transition-colors duration-200">News</a></li>
+          <li><a href="#careers" class="text-gray-400 hover:text-white transition-colors duration-200">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:mauritsengelsman@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-200">info@solvaris.com</a></li>
+          <li class="text-gray-400">Sumatrakade, 1019 RH Amsterdam, Netherlands</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto mt-12 text-center">
+      <p class="text-gray-400">© 2025 Solvaris. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

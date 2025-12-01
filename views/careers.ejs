@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Solvaris - Careers in solar and battery storage solutions.">
+  <meta name="keywords" content="careers, jobs, renewable energy, solar, battery storage, Solvaris">
+  <meta name="author" content="Solvaris">
+  <title>Careers at Solvaris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .nav-link.active {
+      color: #10b981 !important;
+      font-weight: 700;
+    }
+    .nav-link:hover {
+      color: #10b981 !important;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 4px;
+    }
+    #navbar {
+      background: rgba(255, 255, 255, 0.9);
+      transition: background 0.3s ease;
+    }
+    .header-scrolled {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Navigation Bar -->
+  <header id="navbar" class="fixed w-full z-20 transition-all duration-300" role="banner">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-2">
+          <img src="images/logoS.png" alt="Solvaris Logo" class="logo" style="width: 150px; height: auto;">
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
+        <a href="/" class="nav-link text-gray-800 font-medium transition-colors duration-200">Home</a>
+        <a href="/#about" class="nav-link text-gray-800 font-medium transition-colors duration-200">About</a>
+        <a href="/#investments" class="nav-link text-gray-800 font-medium transition-colors duration-200">Investments</a>
+        <a href="/#impact" class="nav-link text-gray-800 font-medium transition-colors duration-200">Impact</a>
+        <a href="/#projects" class="nav-link text-gray-800 font-medium transition-colors duration-200">Projects</a>
+        <a href="/#news" class="nav-link text-gray-800 font-medium transition-colors duration-200">News</a>
+        <a href="/careers" class="nav-link text-gray-800 font-medium transition-colors duration-200 active">Careers</a>
+        <a href="/#contact" class="nav-link text-gray-800 font-medium transition-colors duration-200">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 rounded" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <nav class="flex flex-col p-4 space-y-4" role="navigation" aria-label="Mobile navigation">
+        <a href="/" class="nav-link text-gray-800 font-medium" tabindex="0">Home</a>
+        <a href="/#about" class="nav-link text-gray-800 font-medium" tabindex="0">About</a>
+        <a href="/#investments" class="nav-link text-gray-800 font-medium" tabindex="0">Investments</a>
+        <a href="/#impact" class="nav-link text-gray-800 font-medium" tabindex="0">Impact</a>
+        <a href="/#projects" class="nav-link text-gray-800 font-medium" tabindex="0">Projects</a>
+        <a href="/#news" class="nav-link text-gray-800 font-medium" tabindex="0">News</a>
+        <a href="/careers" class="nav-link text-gray-800 font-medium active" tabindex="0">Careers</a>
+        <a href="/#contact" class="nav-link text-gray-800 font-medium" tabindex="0">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative h-screen flex items-center justify-center">
+    <img src="images/renewable-energy-landscape.jpg" alt="Careers at Solvaris" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4" data-aos="fade-up">Careers at Solvaris</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Join us in powering a sustainable future with solar and battery storage solutions.</p>
+      <a href="#job-openings" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200" data-aos="fade-up" data-aos-delay="400">Explore Opportunities</a>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section id="intro" class="py-20 px-6 bg-gray-50">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">Why Solvaris?</h2>
+      <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">At Solvaris, we’re more than just a renewable energy company—we’re a team of innovators committed to transforming Europe’s energy landscape. Work with us to make a tangible impact on sustainability.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div data-aos="fade-right">
+          <h3 class="text-2xl font-semibold mb-4">Our Culture</h3>
+          <p class="text-gray-600 leading-relaxed">We foster a collaborative, inclusive environment where every voice is heard. Our team thrives on creativity, passion, and a shared commitment to clean energy.</p>
+        </div>
+        <div data-aos="fade-left">
+          <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+          <p class="text-gray-600 leading-relaxed">To accelerate the transition to a net-zero future through cutting-edge solar farms and battery storage systems across Europe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Openings Section -->
+  <section id="job-openings" class="py-20 px-6">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Open Application</h2>
+      <div class="flex justify-center">
+        <div class="bg-white shadow-xl rounded-lg p-6 max-w-md w-full" data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-2 text-center">Open Application</h3>
+          <p class="text-gray-600 mb-1 text-center">Amsterdam, Netherlands</p>
+          <p class="text-gray-600 mb-4 text-center">We welcome talented individuals to join our mission-driven team in various roles. Submit your application to explore opportunities with us.</p>
+          <div class="text-center">
+            <a href="mailto:careers@solvaris.com" class="text-green-600 hover:underline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Process Section -->
+  <section id="application-process" class="py-20 px-6 bg-gray-50">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">How to Join Us</h2>
+      <div class="max-w-3xl mx-auto text-gray-600">
+        <ol class="list-decimal list-inside space-y-4">
+          <li data-aos="fade-up">Submit your open application via email with your resume and cover letter.</li>
+          <li data-aos="fade-up" data-aos-delay="100">Our recruitment team will review your application and reach out if there’s a potential fit.</li>
+          <li data-aos="fade-up" data-aos-delay="200">Participate in interviews and assessments tailored to potential roles.</li>
+          <li data-aos="fade-up" data-aos-delay="300">Receive an offer and start your journey with Solvaris!</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="py-20 px-6 bg-green-800 text-white text-center">
+    <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Ready to Shape the Future?</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Be a part of our mission to deliver sustainable energy solutions.</p>
+    <a href="mailto:careers@solvaris.com" class="px-8 py-3 bg-white text-green-800 rounded-lg hover:bg-gray-100 transition-colors duration-200" data-aos="fade-up" data-aos-delay="200">Apply Today</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Solvaris</h3>
+        <p class="text-gray-400">Pioneering the solar energy revolution with innovative solar and battery storage solutions.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
+          <li><a href="/#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
+          <li><a href="/#investments" class="text-gray-400 hover:text-white transition-colors duration-200">Investments</a></li>
+          <li><a href="/#impact" class="text-gray-400 hover:text-white transition-colors duration-200">Impact</a></li>
+          <li><a href="/#projects" class="text-gray-400 hover:text-white transition-colors duration-200">Projects</a></li>
+          <li><a href="/#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="/#news" class="text-gray-400 hover:text-white transition-colors duration-200">News</a></li>
+          <li><a href="/careers" class="text-gray-400 hover:text-white transition-colors duration-200">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:info@solvaris.com" class="text-gray-400 hover:text-white transition-colors duration-200">info@solvaris.com</a></li>
+          <li><a href="tel:+31201234567" class="text-gray-400 hover:text-white transition-colors duration-200">+31 (0)20 123 4567</a></li>
+          <li class="text-gray-400">Keizersgracht 123, 1015 CJ Amsterdam, Netherlands</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto mt-12 text-center">
+      <p class="text-gray-400">© 2025 Solvaris. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
