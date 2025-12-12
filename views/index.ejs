@@ -29,16 +29,28 @@
       overflow: hidden; /* Clip any overflow from the scaled iframe */
       z-index: 1;
     }
-    #home .hero-media iframe {
-      width: 110%; /* Scale slightly larger to cover the area */
-      height: 110%;
+    #home .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); /* Center the iframe */
-      border: none;
-      object-fit: cover; /* Ensure video fills container */
+      top: 0;
+      left: 0;
     }
+
+      /* VIDEO BLOCK  */
+      /* #home .hero-media iframe {
+      width: 110%; /* Scale slightly larger to cover the area */
+      /* height: 110%; */
+      /* position: absolute; */
+      /* top: 50%; */
+      /* left: 50%; */
+      /* transform: translate(-50%, -50%); Center the iframe */
+      /* border: none; */
+      /* object-fit: cover; Ensure video fills container */
+    /* } */
+
+
     #home .hero-overlay {
       position: absolute;
       top: 0;
@@ -338,7 +350,9 @@
     </div>
   </header>
 
-  <section id="home">
+
+  <!-- VIDEO BLOCK-->
+  <!-- <section id="home">
     <div class="hero-media">
       <iframe 
           src="https://player.vimeo.com/video/1006636061?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0" 
@@ -359,7 +373,49 @@
         <a href="#contact" class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-800 transition-colors duration-200 w-full sm:w-auto text-center">Get in Touch</a>
       </div>
     </div>
-  </section>
+  </section> -->
+
+
+
+  <!-- PHOTO BLOCK-->
+  <section id="home">
+  <div class="hero-media">
+    <img 
+      src="images/hero.jpg" 
+      alt="Hero background"
+      class="hero-image"
+    />
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content container mx-auto px-6 text-left text-white">
+    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4">
+      <span class="typed-text">Timon Rowntree</span>
+    </h1>
+
+    <p class="text-xl md:text-2xl mb-8 max-w-2xl">
+      Some interesting text here – A
+    </p>
+
+    <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 items-center">
+      <a href="#vision"
+         class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 w-full sm:w-auto text-center">
+        Discover Our Vision
+      </a>
+
+      <a href="#contact"
+         class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-800 transition-colors duration-200 w-full sm:w-auto text-center">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
   <section id="about" class="bg-gray-50 py-20 px-6">
     <div class="container mx-auto">
