@@ -132,13 +132,14 @@
       border-right: 2px solid white;
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 3s steps(34, end), blink 0.75s step-end infinite;
+      animation: typing 3s steps(17, end), blink 0.75s step-end infinite; /* 17 = length of "Timon Rowntree" */
       line-height: 1.2;
-      max-width: 100%; /* Prevent overflow */
+      width: 0; /* start width */
     }
+
     @keyframes typing {
       from { width: 0; }
-      to { width: 100%; }
+      to { width: 17ch; } /* matches number of characters */
     }
     @keyframes blink {
       50% { border-color: transparent; }
