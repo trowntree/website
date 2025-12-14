@@ -127,6 +127,7 @@
       80% { opacity: 1; }
       100% { opacity: 0; visibility: hidden; }
     }
+
     .typed-text {
       display: inline-block;
       border-right: 2px solid white;
@@ -134,12 +135,12 @@
       overflow: hidden;
       line-height: 1.2;
       width: 0;
-      animation: typing 2.5s steps(14, end) forwards, blink 0.75s step-end infinite;
+      animation: typing 2.5s steps(12, end) forwards, blink 0.75s step-end infinite;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 14ch; } /* 14 characters in "Timon Rowntree" */
+      to { width: 12ch; } /* 14 characters in "Timon Rowntree" */
     }
 
     @keyframes blink {
