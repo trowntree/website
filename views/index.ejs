@@ -134,17 +134,16 @@
 
     .typed-text {
       display: inline-block;
-      border-right: 2px solid white;
       white-space: nowrap;
       overflow: hidden;
       line-height: 1.2;
       width: 0;
-      animation: typing 1.0s steps(13, end) forwards, blink 1.0s step-end infinite;
+      animation: typing 1.0s steps(13, end) forwards;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 13ch; } /* 14 characters in "Timon Rowntree" */
+      to { width: 13ch; } /* adjust for your text length */
     }
 
     @keyframes blink {
