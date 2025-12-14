@@ -23,15 +23,19 @@
   <!-- ---------------------------------------- STYLE -------------------------------------------------- -->
   
   <style>
+    :root {
+      --font-text: 800;   /* default text weight */
+      --font-header: 100; /* default header weight */
+    }
+
     body {
-    font-family: 'Sofia Sans', sans-serif;
-    font-weight: 800; /* thin by default */
+      font-family: 'Sofia Sans', sans-serif;
+      font-weight: var(--font-text); /* all text uses this by default */
     }
 
     h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sofia Sans', sans-serif;
-    font-weight: 100;
-    line-height: 1.2;
+      font-weight: var(--font-header); /* headers use this weight */
+      line-height: 1.2;
     }
 
     #home {
