@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery | Timon Rowntree</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN (simple setup) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="py-8 text-center">
+    <h1 class="text-4xl font-semibold" style="color: rgb(81, 230, 0);">
+      Photo Gallery
+    </h1>
+    <p class="text-gray-600 mt-2">
+      Selected moments from projects and field work
+    </p>
+  </header>
+
+  <!-- Gallery Grid -->
+  <main class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <img src="images/Africa_images/DSCF0678.JPG"
+           alt="Project Image 1"
+           class="w-full h-64 object-cover rounded-lg shadow-lg">
+
+      <img src="images/Africa_images/DSCF1477.JPG"
+           alt="Project Image 2"
+           class="w-full h-64 object-cover rounded-lg shadow-lg">
+
+      <img src="images/Africa_images/DSCF0765.JPG"
+           alt="Project Image 3"
+           class="w-full h-64 object-cover rounded-lg shadow-lg">
+
+    </div>
+
+    <!-- Back button -->
+    <div class="text-center mt-12">
+      <a href="index.ejs"
+         class="inline-block px-6 py-3 rounded-lg text-white transition-colors duration-200"
+         style="background-color: rgb(44, 236, 255);">
+        ← Back to Home
+      </a>
+    </div>
+  </main>
+
+</body>
+</html>
