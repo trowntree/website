@@ -683,7 +683,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
       
       <div class="card" data-aos="fade-right">
-        <h3 class="text-2xl mb-6">Message Me updated3</h3>
+        <h3 class="text-2xl mb-6">Message Me updated4</h3>
         <div class="space-y-6">
           
           <div>
@@ -701,7 +701,7 @@
             <textarea id="message" class="w-full border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-400" rows="5" placeholder="Your Message" required></textarea>
           </div>
           
-          <button type="button" onclick="submitForm()" class="w-full text-gray-800 py-3 rounded-lg transition-colors duration-200"
+          <button type="button" onclick="submitFormTimon()" class="w-full text-gray-800 py-3 rounded-lg transition-colors duration-200"
                   style="background-color: rgb(81, 230, 0);"
                   onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
                   onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'">
@@ -806,7 +806,7 @@
 
 
   <script>
-    function submitForm() {
+    function submitFormTimon() {
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
@@ -816,7 +816,7 @@
         return;
       }
 
-      const button = document.querySelector("button[onclick='submitForm()']");
+      const button = document.querySelector("button[onclick='submitFormTimon()']");
       button.disabled = true;
       button.textContent = "Sending...";
 
