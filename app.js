@@ -24,6 +24,11 @@ app.get('/investment-strategy', (req, res) => {
   res.render('investment-strategy');
 });
 
+// Route to render gallery.ejs
+app.get('/gallery', (req, res) => {
+  res.render('gallery');
+});
+
 // Export the app for Vercel
 module.exports = app;
 
