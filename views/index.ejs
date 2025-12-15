@@ -79,7 +79,7 @@
     /* Discover Vision button */
     .btn-vision {
       background-color: rgb(81, 230, 0); /* Green */
-      color: white;
+      color: black;
       transition: background-color 0.2s;
     }
     .btn-vision:hover {
@@ -89,15 +89,16 @@
     /* Get in Touch button */
     .btn-contact {
       background-color: transparent;
-      border: 2px solid rgb(81, 230, 0);
+      border: 2px solid rgb(81, 230, 0); /* green */
       color: black;
-      transition: background-color 0.2s, color 0.2s;
-    }
-    .btn-contact:hover {
-      background-color: rgb(44, 236, 255); /* Green on hover */
-      color: white;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     }
 
+    .btn-contact:hover {
+      background-color: rgb(44, 236, 255); /* blue */
+      border-color: rgb(44, 236, 255);     /* blue border */
+      color: black;
+    }
 
     #home .hero-overlay {
       position: absolute;
