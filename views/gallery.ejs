@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/images/Africa_images/TR%20Symbol_Lime_blue.png" type="image/png">
+  <!-- Favicon / Logo -->
+  <link rel="icon" href="/images/Africa_images/TR%20Logo_Lime-1.png" type="image/png">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Timon Rowntree">
-  <meta name="keywords" content="solar mini-grids, solar, mini-grids, mini grids, consultant, expert, Africa, emerging markets, renewable energy, energy access, off-grid solar, microgrids, sustainable energy, Timon Rowntree, Timon, Rowntree">
+  <meta name="keywords" content="solar mini-grids, solar, mini-grids, mini grids, consultant, expert, Africa, emerging markets, renewable energy, energy access, off-grid solar, microgrids, sustainable energy">
   <meta name="author" content="Timon Rowntree">
   
   <title>Gallery | Timon Rowntree</title>
@@ -20,19 +22,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* Copy all homepage styles */
     :root {
-      --font-text: 300;
-      --font-header: 100;
+      --font-text: 200;   /* thinner text */
+      --font-header: 100; /* header weight */
     }
+
     body {
       font-family: 'Sofia Sans', sans-serif;
       font-weight: var(--font-text);
       scroll-behavior: smooth;
+      background-color: #f9fafb;
+      color: #1f2937;
     }
-    h1,h2,h3,h4,h5,h6 { font-weight: var(--font-header); line-height:1.2; }
 
-    /* Navbar styles (copy from homepage) */
+    h1,h2,h3,h4,h5,h6 { 
+      font-weight: var(--font-header); 
+      line-height:1.2; 
+    }
+
+    /* Navbar styles */
     #navbar { background: rgba(255,255,255,0.9); transition: background 0.3s ease; }
     .header-scrolled { background: rgba(255,255,255,1); box-shadow: 0 4px 12px rgba(0,0,0,0.1);}
     .nav-link { position: relative; padding: 8px 12px; transition: color 0.2s ease, background 0.3s ease; color: rgb(31,41,55);}
@@ -43,20 +51,19 @@
     .nav-link:focus { outline:2px solid rgb(81,230,0); outline-offset:2px; border-radius:4px;}
 
     /* Gallery image card styles */
-    .card { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .card { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 0; transition: transform 0.3s ease, box-shadow 0.3s ease;}
     .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body>
 
   <!-- Header & Navbar -->
-  <header id="navbar" class="w-full shadow-sm">
+  <header id="navbar" class="w-full shadow-sm fixed top-0 left-0 z-50">
     <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between py-6 px-6">
       <!-- Logo -->
       <div class="flex items-center">
-        <img src="/images/Africa_images/TR%20Symbol_Lime_blue.png" alt="Logo" class="h-20 w-auto mr-4">
-        <span class="text-xl font-semibold text-gray-900 hidden sm:block">Timon Rowntree</span>
+        <img src="/images/Africa_images/TR%20Logo_Lime-1.png" alt="Logo" class="h-20 w-auto">
       </div>
       <!-- Navigation -->
       <nav class="mt-4 sm:mt-0">
@@ -73,7 +80,7 @@
   </header>
 
   <!-- Page Header -->
-  <section class="py-12 text-center">
+  <section class="pt-32 pb-12 text-center">
     <h1 class="text-4xl font-semibold mb-2" style="color: rgb(81, 230, 0);" data-aos="fade-up">
       Photo Gallery
     </h1>
