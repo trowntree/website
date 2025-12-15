@@ -796,6 +796,53 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="/js/main.js" defer></script>
+
+
+<!-- ----------------------- EMAILJS ----------------------- -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("zFEoAIhMTVQ6iZpa9"); // Replace with your EmailJS Public Key
+</script>
+
+
+<script>
+  function submitForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if(!name || !email || !message){
+      alert("Please fill all fields.");
+      return;
+    }
+
+    const button = document.querySelector("button[onclick='submitForm()']");
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    emailjs.send("service_b4p3lks", "template_8kariuu", {
+      from_name: name,
+      reply_to: email,
+      message: message
+    })
+    .then(() => {
+      button.disabled = false;
+      button.textContent = "Submit";
+      alert("Message sent successfully!");
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    })
+    .catch((error) => {
+      button.disabled = false;
+      button.textContent = "Submit";
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    });
+  }
+</script>
+
+
 </body>
 </html>
 
