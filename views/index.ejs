@@ -467,12 +467,22 @@
  
 
 <section id="home">
+
   <div class="hero-media">
-    <img 
-      src="images/Africa_images/Logo14.jpg" 
-      alt="Hero background"
-      class="hero-image"
-    />
+    <picture>
+      <!-- Mobile image -->
+      <source 
+        srcset="images/Africa_images/Logo14_mobile.jpg"
+        media="(max-width: 768px)"
+      />
+
+      <!-- Desktop image -->
+      <img 
+        src="images/Africa_images/Logo14.jpg"
+        alt="Hero background"
+        class="hero-image"
+      />
+    </picture>
   </div>
 
   <div class="hero-overlay"></div>
