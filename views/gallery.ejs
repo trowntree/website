@@ -146,24 +146,27 @@
     <!-- Second Row: Portrait Left, Landscape Right -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
 
-      <!-- Portrait on left (25% bigger) -->
+      <!-- Portrait on left (slightly wider, cropped top) -->
       <div data-aos="fade-up" data-aos-delay="200">
-        <div class="overflow-hidden rounded-lg shadow-lg" style="height: 625px;">
-          <img src="/images/Africa_images/DSCF1477.JPG" alt="Portrait Image" class="w-full h-full object-cover">
+        <div class="overflow-hidden rounded-lg shadow-lg aspect-[3/4] md:h-[625px]">
+          <img src="/images/Africa_images/DSCF1477.JPG" 
+              alt="Portrait Image" 
+              class="w-full h-full object-cover object-top">
         </div>
         <p class="mt-2 text-sm text-gray-500 text-center">Caption 2: Dummy text for portrait image</p>
       </div>
 
-      <!-- Landscape on right, scaled to match portrait -->
+      <!-- Landscape on right, slightly smaller -->
       <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
-        <div class="overflow-hidden rounded-lg shadow-lg" style="height: 625px;">
-          <img src="/images/Africa_images/DSCF0765.JPG" alt="Landscape Image" class="w-full h-full object-cover">
+        <div class="overflow-hidden rounded-lg shadow-lg aspect-[4/3] md:h-[550px]">
+          <img src="/images/Africa_images/DSCF0765.JPG" 
+              alt="Landscape Image" 
+              class="w-full h-full object-cover object-center">
         </div>
         <p class="mt-2 text-sm text-gray-500 text-center">Caption 3: Dummy text for landscape image</p>
       </div>
 
     </div>
-
 
 
     <!-- Back button styled consistently -->
