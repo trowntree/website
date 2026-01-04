@@ -626,21 +626,35 @@
   <!-- -----------------------  BLOCK 6 : GALLERY  ------------------------------- -->
 
 
-  <section id="gallery" class="bg-white py-20 px-6">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl mb-12" style="color: rgb(81, 230, 0);" data-aos="fade-up">
-        Gallery
-      </h2>
-      <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">A selection of photographs captured during projects and field work.</p>
+<!-- -----------------------  BLOCK : GALLERY INTRO  ------------------------------- -->
 
-      <a href="/gallery"
-        class="w-full sm:w-auto px-8 py-3 rounded-lg text-center text-gray-800 transition-colors duration-200"
-        style="background-color: rgb(81, 230, 0);"
-        onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
-        onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'">
-        View Photo Gallery
-      </a>
+<section id="gallery" class="bg-white py-20 px-6">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Text on the left -->
+      <div data-aos="fade-right">
+        <h2 class="text-4xl mb-6" style="color: rgb(81, 230, 0);">
+          Gallery
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          During my work, I come across people and places that are amazing. Here I share a curated collection of those moments, captured throughout projects and field visits.
+        </p>
 
+        <!-- View Gallery Button -->
+        <a href="/gallery"
+           class="w-full sm:w-auto px-8 py-3 rounded-lg text-center text-gray-800 transition-colors duration-200"
+           style="background-color: rgb(81, 230, 0);"
+           onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
+           onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'">
+          View Photo Gallery
+        </a>
+      </div>
+
+      <!-- Image on the right -->
+      <div data-aos="fade-left" data-aos-delay="200">
+        <img src="images/solvaris-team.jpg" alt="Solvaris Team" class="w-full rounded-lg shadow-lg">
+      </div>
 
       <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="card" style="background-color: rgb(81, 230, 0);" data-aos="fade-up" data-aos-delay="100">
