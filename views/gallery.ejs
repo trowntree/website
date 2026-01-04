@@ -155,6 +155,8 @@
   <!-- -----------------------  GALLERY GRID ------------------------------- -->
   <main class="container mx-auto px-6 py-12 space-y-8">
     <!-- (Gallery rows remain exactly the same as your original HTML) -->
+
+
     <!-- 1st row -->
     <div data-aos="fade-up">
       <div class="w-full overflow-hidden rounded-lg shadow-lg">
@@ -162,17 +164,25 @@
       </div>
       <p class="mt-2 text-sm text-gray-500 text-center">Freetown, Sierra Leone</p>
     </div>
+
     <!-- 2nd row -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <!-- Portrait on left -->
       <div data-aos="fade-up" data-aos-delay="200">
-        <div class="overflow-hidden rounded-lg shadow-lg" style="height: 625px;">
-          <img src="/images/Africa_images/DSCF1477.JPG" alt="Portrait Image" class="w-full h-full object-cover">
+        <div class="overflow-hidden rounded-lg shadow-lg aspect-[4/5] md:h-[625px]">
+          <img src="/images/Africa_images/DSCF1477.JPG" 
+              alt="Portrait Image" 
+              class="w-full h-full object-cover">
         </div>
         <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
       </div>
+
+      <!-- Landscape on right -->
       <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
-        <div class="overflow-hidden rounded-lg shadow-lg" style="height: 625px;">
-          <img src="/images/Africa_images/DSCF1443.jpg" alt="Landscape Image" class="w-full h-full object-cover">
+        <div class="overflow-hidden rounded-lg shadow-lg aspect-[16/9] md:h-[625px]">
+          <img src="/images/Africa_images/DSCF1443.jpg" 
+              alt="Landscape Image" 
+              class="w-full h-full object-cover">
         </div>
         <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
       </div>
