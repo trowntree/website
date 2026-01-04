@@ -165,11 +165,12 @@
       <p class="mt-2 text-sm text-gray-500 text-center">Freetown, Sierra Leone</p>
     </div>
 
+    
     <!-- 2nd row -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-      <!-- Portrait on left -->
+      <!-- Portrait on left (keeps portrait height on mobile) -->
       <div data-aos="fade-up" data-aos-delay="200">
-        <div class="overflow-hidden rounded-lg shadow-lg aspect-[4/5] md:h-[625px]">
+        <div class="overflow-hidden rounded-lg shadow-lg md:h-[625px]">
           <img src="/images/Africa_images/DSCF1477.JPG" 
               alt="Portrait Image" 
               class="w-full h-full object-cover">
@@ -177,16 +178,17 @@
         <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
       </div>
 
-      <!-- Landscape on right -->
+      <!-- Landscape on right (full width, full height on mobile, desktop same) -->
       <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
-        <div class="overflow-hidden rounded-lg shadow-lg aspect-[16/9] md:h-[625px]">
+        <div class="overflow-hidden rounded-lg shadow-lg md:h-[625px] w-full">
           <img src="/images/Africa_images/DSCF1443.jpg" 
               alt="Landscape Image" 
-              class="w-full h-full object-cover">
+              class="w-full h-auto object-cover">
         </div>
         <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
       </div>
     </div>
+
 
     <!-- 3rd Row: Two Landscape Images Side by Side -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
