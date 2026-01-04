@@ -866,11 +866,49 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="/js/main.js" defer></script>
+
+  
+<!-- ----------------------- BACK TO TOP BUTTON ------------------------------- -->
+
+  <div id="backToTopWrapper" class="flex justify-center my-12 hidden" data-aos="fade-up">
+    <button id="backToTop"
+            class="px-6 py-3 rounded-lg text-gray-800 transition-colors duration-200"
+            style="background-color: rgb(81, 230, 0);"
+            onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
+            onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'">
+      ↑ Back to Top
+    </button>
+  </div>
+
+  <script>
+    const backToTopWrapper = document.getElementById('backToTopWrapper');
+    const contactSection = document.getElementById('contact');
+
+    window.addEventListener('scroll', () => {
+      const contactTop = contactSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // Show button when the contact section enters viewport
+      if (contactTop < windowHeight) {
+        backToTopWrapper.classList.remove('hidden');
+      } else {
+        backToTopWrapper.classList.add('hidden');
+      }
+    });
+
+    // Smooth scroll to top
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
 
 
   <!-- ----------------------- EMAILJS ----------------------- -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/js/main.js" defer></script>
+
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     emailjs.init("7X1ttYN6eM5BIvr3Q"); // Replace with your EmailJS Public Key
