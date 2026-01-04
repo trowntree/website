@@ -135,24 +135,34 @@
   <!-- Gallery Grid -->
   <main class="container mx-auto px-6 py-12 space-y-12">
 
-    <!-- Top Big Landscape Image with Natural Aspect Ratio -->
-    <div class="w-full overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
-      <img src="/images/Africa_images/DSCF0678.JPG" alt="Big Landscape Image" class="w-full h-auto object-cover">
-      <p class="mt-2 text-sm text-gray-500 text-center">Freetown, Sierra Leone</p>
+    <!-- Top Big Landscape Image with Caption Below -->
+    <div data-aos="fade-up">
+      <div class="w-full overflow-hidden rounded-lg shadow-lg">
+        <img src="/images/Africa_images/DSCF0678.JPG" alt="Big Landscape Image" class="w-full h-auto object-cover">
+      </div>
+      <p class="mt-2 text-sm text-gray-500 text-center">Caption 1: Dummy text for landscape image</p>
     </div>
 
     <!-- Second Row: Portrait Left, Landscape Right -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+
       <!-- Portrait on left -->
-      <div class="col-span-1 overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-        <img src="/images/Africa_images/DSCF1477.JPG" alt="Portrait Image" class="w-full h-[500px] object-cover">
+      <div data-aos="fade-up" data-aos-delay="200">
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <img src="/images/Africa_images/DSCF1477.JPG" alt="Portrait Image" class="w-full h-[500px] object-cover">
+        </div>
+        <p class="mt-2 text-sm text-gray-500 text-center">Caption 2: Dummy text for portrait image</p>
       </div>
 
       <!-- Landscape on right -->
-      <div class="col-span-2 overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
-        <img src="/images/Africa_images/DSCF0765.JPG" alt="Landscape Image" class="w-full h-[500px] object-cover">
+      <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <img src="/images/Africa_images/DSCF0765.JPG" alt="Landscape Image" class="w-full h-[500px] object-cover">
+        </div>
+        <p class="mt-2 text-sm text-gray-500 text-center">Caption 3: Dummy text for landscape image</p>
       </div>
-    </div>
+
+</div>
 
     <!-- Back button -->
     <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="500">
