@@ -146,23 +146,24 @@
     <!-- Second Row: Portrait Left, Landscape Right -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
 
-      <!-- Portrait on left (25% taller) -->
+      <!-- Portrait on left (25% bigger) -->
       <div data-aos="fade-up" data-aos-delay="200">
-        <div class="overflow-hidden rounded-lg shadow-lg h-[625px] md:h-auto">
+        <div class="overflow-hidden rounded-lg shadow-lg" style="height: 625px;">
           <img src="/images/Africa_images/DSCF1477.JPG" alt="Portrait Image" class="w-full h-full object-cover">
         </div>
         <p class="mt-2 text-sm text-gray-500 text-center">Caption 2: Dummy text for portrait image</p>
       </div>
 
-      <!-- Landscape on right, fills remaining height nicely -->
-      <div class="md:col-span-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
-        <div class="overflow-hidden rounded-lg shadow-lg h-[500px] md:h-full">
+      <!-- Landscape on right, aligned nicely -->
+      <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
+        <div class="overflow-hidden rounded-lg shadow-lg" style="height: 500px;">
           <img src="/images/Africa_images/DSCF0765.JPG" alt="Landscape Image" class="w-full h-full object-cover">
         </div>
         <p class="mt-2 text-sm text-gray-500 text-center">Caption 3: Dummy text for landscape image</p>
       </div>
 
     </div>
+
 
     <!-- Back button styled consistently -->
     <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="500">
