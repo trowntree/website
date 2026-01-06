@@ -59,8 +59,8 @@ app.get('/article_capacity_utilisation', (req, res) => {
   res.render('article_capacity_utilisation');
 });
 
-app.get('/article_innovative_financing', (req, res) => {
-  res.render('article_innovative_financing');
+app.get('/article_ai', (req, res) => {
+  res.render('article_ai');
 });
 
 // Export the app for Vercel
