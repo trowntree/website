@@ -19,7 +19,7 @@ const articles = [
     image: '/images/com2.png'
   },
   {
-    title: 'Capacity Utlisation',
+    title: 'Capacity Utilisation',
     summary: 'Exploring capacity utilisation as the all-encompassing metric for system performance',
     link: '/article_capacity_utilisation',
     image: '/images/hernen-solar.jpg'
