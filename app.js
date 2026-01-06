@@ -27,7 +27,7 @@ const articles = [
   {
     title: 'Innovative Financing',
     summary: 'Creative financing mechanisms to fund renewable energy projects and expand reliable power access.',
-    link: '/article_innovative_finance',
+    link: '/article_innovative_financing',
     image: '/images/Africa_images/DSCF0367.JPG'
   }
 ];
