@@ -4,10 +4,10 @@
   <link rel="icon" href="/images/Africa_images/TR%20Symbol_Lime_blue.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Community Impact Article | Timon Rowntree">
-  <meta name="keywords" content="solar mini-grids, renewable energy, community, Africa, energy access">
+  <meta name="description" content="Timon Rowntree">
+  <meta name="keywords" content="solar mini-grids, solar, mini-grids, mini grids, consultant, expert, Africa, emerging markets, renewable energy, energy access, off-grid solar, microgrids, sustainable energy">
   <meta name="author" content="Timon Rowntree">
-  <title>Community Impact | Timon Rowntree</title>
+  <title>Gallery | Timon Rowntree</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,13 +43,11 @@
       transition: all 0.3s ease;
       height: 60px;
       z-index: 50;
-      position: fixed;
-      width: 100%;
-      top: 0;
     }
     #navbar.scrolled {
       background: rgba(255,255,255,1);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: 60px;
     }
     .nav-link {
       position: relative;
@@ -72,6 +70,16 @@
     .nav-link:hover::after { width: 100%; }
     .nav-link.active { color: rgb(81,230,0) !important; font-weight: 700; }
 
+    /* Gallery cards */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
     /* Page header */
     .page-header { padding-top: 120px; padding-bottom: 40px; text-align: center; }
     .page-header h1 { color: rgb(81,230,0); font-size: 2.5rem; margin-bottom: 0.5rem; }
@@ -90,10 +98,6 @@
     }
     .btn-back:hover { background-color: rgb(81,230,0); color: #000; }
 
-    /* Article content */
-    .article-content img { border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .article-content p { color: #374151; line-height: 1.8; }
-
     /* Responsive grid */
     @media (min-width: 768px) {
       .grid-cols-md { grid-template-columns: repeat(3, 1fr); }
@@ -106,7 +110,7 @@
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Navbar -->
-  <header id="navbar" class="flex items-center px-6">
+  <header id="navbar" class="fixed w-full flex items-center px-6">
     <div class="container mx-auto flex justify-between items-center h-full">
       <a href="/#home">
         <img src="/images/Africa_images/TR%20Logo_Lime-1.png" alt="Logo" class="h-12 w-auto">
@@ -118,7 +122,7 @@
         <a href="/#about" class="nav-link">About</a>
         <a href="/#expertise" class="nav-link">Expertise</a>
         <a href="/#articles" class="nav-link">Articles</a>
-        <a href="/#gallery" class="nav-link">Gallery</a>
+        <a href="/#gallery" class="nav-link active">Gallery</a>
         <a href="/#contact" class="nav-link">Contact</a>
       </nav>
 
@@ -138,85 +142,51 @@
       <a href="/#about" class="block px-6 py-3 nav-link">About</a>
       <a href="/#expertise" class="block px-6 py-3 nav-link">Expertise</a>
       <a href="/#articles" class="block px-6 py-3 nav-link">Articles</a>
-      <a href="/#gallery" class="block px-6 py-3 nav-link">Gallery</a>
+      <a href="/#gallery" class="block px-6 py-3 nav-link active">Gallery</a>
       <a href="/#contact" class="block px-6 py-3 nav-link">Contact</a>
     </div>
   </header>
 
   <!-- Page Header -->
   <section class="page-header">
-    <h1 data-aos="fade-up" class="mb-4">Community Impact</h1>
-    <p data-aos="fade-up" data-aos-delay="100">How inclusive access and empowerment transform communities through reliable and affordable energy.</p>
+    <h1 data-aos="fade-up" class="mb-4">Photo Gallery</h1>
   </section>
 
-  <!-- Article Content -->
-  <main class="container mx-auto px-6 py-12 max-w-4xl space-y-12 article-content">
-    <article data-aos="fade-up">
-      <p class="mb-4">
-        Providing access to energy is more than installing solar panels — it’s about enabling education, healthcare, and local businesses to thrive.
-      </p>
-      <p class="mb-4">
-        In remote communities, decentralised solar solutions have reduced reliance on diesel generators, cutting both costs and emissions. By partnering with local stakeholders, these projects empower residents to maintain, operate, and benefit from the systems themselves.
-      </p>
-      <p class="mb-4">
-        Case studies from Sierra Leone, Liberia, and Benin show that when energy access is paired with community engagement, the results are transformative — from longer school hours to new small businesses and improved healthcare services.
-      </p>
-      <p class="mb-4">
-        This model highlights that energy is not just infrastructure — it’s a catalyst for sustainable, equitable development.
-      </p>
-    </article>
+  <!-- -----------------------  GALLERY GRID ------------------------------- -->
+  <main class="container mx-auto px-6 py-12 space-y-8">
+    <!-- (Gallery rows remain exactly the same as your original HTML) -->
 
-    <!-- Back Button -->
-    <div class="flex justify-center" data-aos="fade-up" data-aos-delay="200">
-      <a href="/#articles" class="btn-back">← Back to Articles</a>
+
+    <!-- 1st row -->
+    <div data-aos="fade-up">
+      <div class="w-full overflow-hidden rounded-lg shadow-lg">
+        <img src="/images/Africa_images/DSCF0678.JPG" alt="Big Landscape Image" class="w-full h-auto object-cover">
+      </div>
+      <p class="mt-2 text-sm text-gray-500 text-center">Freetown, Sierra Leone</p>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12 px-6">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-      <div class="flex items-start justify-center mt-1 -ml-12">
-        <img src="/images/Africa_images/TR%20Symbol_Lime_blue.png" 
-            alt="Timon Rowntree Logo" 
-            style="height: 130px; width: auto;">
+    <!-- 2nd row -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <!-- Portrait on left (keeps portrait height on mobile) -->
+      <div data-aos="fade-up" data-aos-delay="200">
+        <div class="overflow-hidden rounded-lg shadow-lg md:h-[625px]">
+          <img src="/images/Africa_images/DSCF1477.JPG" 
+              alt="Portrait Image" 
+              class="w-full h-full object-cover">
+        </div>
+        <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
       </div>
 
-      <div>
-        <h3 class="text-xl mb-4" style="color: rgb(44, 236, 255);">Quick Links</h3>
-        <ul class="space-y-2">
-          <li><a href="#home" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Home</a></li>
-          <li><a href="#about" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">About</a></li>
-          <li><a href="#expertise" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Expertise</a></li>
-          <li><a href="#articles" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Articles</a></li>
-          <li><a href="#gallery" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Gallery</a></li>
-          <li><a href="#contact" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl mb-4" style="color: rgb(44, 236, 255);">Resources</h3>
-        <ul class="space-y-2">
-          <li><a href="#gallery" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Gallery</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl mb-4" style="color: rgb(44, 236, 255);">Contact Info</h3>
-        <ul class="space-y-2">
-          <li><a href="mailto:timon@rowntree.nl" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">timon@rowntree.nl</a></li>
-          <li class="text-gray-400">
-            Martinus Houttuynhof<br>
-            2341 PR Oegstgeest<br>
-            Zuid-Holland<br>
-            The Netherlands 
-          </li>
-        </ul>
+      <!-- Landscape on right (fills portrait height on desktop, full width on mobile) -->
+      <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
+        <div class="overflow-hidden rounded-lg shadow-lg h-auto md:h-[625px] w-full">
+          <img src="/images/Africa_images/DSCF1443.jpg" 
+              alt="Landscape Image" 
+              class="w-full h-full object-cover">
+        </div>
+        <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
       </div>
     </div>
-    <div class="container mx-auto mt-12 text-center">
-      <p class="text-gray-400">© 2025 Timon Rowntree. All rights reserved.</p>
-    </div>
-  </footer>
 
   <!-- Back to Top button -->
   <button id="backToTop"
@@ -228,11 +198,15 @@
     Back to Top
   </button>
 
+
+  <!-- ----------------------- SCRIPTS ------------------------------- -->
   <script>
     // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
     // Back to top button
     const backToTop = document.getElementById('backToTop');
@@ -248,13 +222,15 @@
         backToTop.classList.add('opacity-0');     
       }
     });
-    backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     // AOS
     AOS.init({ once: true });
 
     // Navbar active link on scroll
-    const sections = ['home','about','expertise','articles','gallery','contact'];
+    const sections = ['home','about','expertise','articles',,'gallery','contact'];
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
