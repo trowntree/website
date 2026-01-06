@@ -4,10 +4,10 @@
   <link rel="icon" href="/images/Africa_images/TR%20Symbol_Lime_blue.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Timon Rowntree">
-  <meta name="keywords" content="solar mini-grids, solar, mini-grids, mini grids, consultant, expert, Africa, emerging markets, renewable energy, energy access, off-grid solar, microgrids, sustainable energy">
+  <meta name="description" content="Community Impact Article by Timon Rowntree">
+  <meta name="keywords" content="solar mini-grids, community impact, renewable energy, off-grid solar, Africa, sustainable energy">
   <meta name="author" content="Timon Rowntree">
-  <title>Gallery | Timon Rowntree</title>
+  <title>Community Impact | Timon Rowntree</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,7 +22,6 @@
       --font-text: 200;
       --font-header: 100;
     }
-
     body {
       font-family: 'Sofia Sans', sans-serif;
       font-weight: var(--font-text);
@@ -30,11 +29,7 @@
       background-color: #f9fafb;
       color: #1f2937;
     }
-
-    h1,h2,h3,h4,h5,h6 {
-      font-weight: var(--font-header);
-      line-height: 1.2;
-    }
+    h1,h2,h3,h4,h5,h6 { font-weight: var(--font-header); line-height: 1.2; }
 
     /* Navbar */
     #navbar {
@@ -47,7 +42,6 @@
     #navbar.scrolled {
       background: rgba(255,255,255,1);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      height: 60px;
     }
     .nav-link {
       position: relative;
@@ -70,41 +64,33 @@
     .nav-link:hover::after { width: 100%; }
     .nav-link.active { color: rgb(81,230,0) !important; font-weight: 700; }
 
-    /* Gallery cards */
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      overflow: hidden;
-    }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-
     /* Page header */
     .page-header { padding-top: 120px; padding-bottom: 40px; text-align: center; }
     .page-header h1 { color: rgb(81,230,0); font-size: 2.5rem; margin-bottom: 0.5rem; }
     .page-header p { color: #4b5563; font-size: 1.125rem; }
 
+    /* Article content */
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.75;
+      font-size: 1.125rem;
+      color: #374151;
+    }
+    .article-content h2, .article-content h3 { margin-top: 2rem; color: rgb(44,236,255); }
+
     /* Back button */
-    .btn-back {
+    #backToTop {
       display: inline-block;
       padding: 0.75rem 1.5rem;
       border-radius: 0.5rem;
       font-weight: 600;
-      background-color: rgb(44,236,255);
+      background-color: rgb(81, 230, 0);
       color: #000;
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn-back:hover { background-color: rgb(81,230,0); color: #000; }
-
-    /* Responsive grid */
-    @media (min-width: 768px) {
-      .grid-cols-md { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 767px) {
-      .grid-cols-md { grid-template-columns: 1fr; }
-    }
+    #backToTop:hover { background-color: rgb(44,236,255); color: #000; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -115,18 +101,14 @@
       <a href="/#home">
         <img src="/images/Africa_images/TR%20Logo_Lime-1.png" alt="Logo" class="h-12 w-auto">
       </a>
-
-      <!-- Desktop nav -->
       <nav class="hidden md:flex space-x-6">
         <a href="/#home" class="nav-link">Home</a>
         <a href="/#about" class="nav-link">About</a>
         <a href="/#expertise" class="nav-link">Expertise</a>
-        <a href="/#articles" class="nav-link">Articles</a>
-        <a href="/#gallery" class="nav-link active">Gallery</a>
+        <a href="/#articles" class="nav-link active">Articles</a>
+        <a href="/#gallery" class="nav-link">Gallery</a>
         <a href="/#contact" class="nav-link">Contact</a>
       </nav>
-
-      <!-- Mobile Hamburger -->
       <div class="md:hidden flex items-center">
         <button id="mobile-menu-button" class="focus:outline-none">
           <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -136,101 +118,75 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-16 left-0 w-full shadow-lg z-40">
       <a href="/#home" class="block px-6 py-3 nav-link">Home</a>
       <a href="/#about" class="block px-6 py-3 nav-link">About</a>
       <a href="/#expertise" class="block px-6 py-3 nav-link">Expertise</a>
-      <a href="/#articles" class="block px-6 py-3 nav-link">Articles</a>
-      <a href="/#gallery" class="block px-6 py-3 nav-link active">Gallery</a>
+      <a href="/#articles" class="block px-6 py-3 nav-link active">Articles</a>
+      <a href="/#gallery" class="block px-6 py-3 nav-link">Gallery</a>
       <a href="/#contact" class="block px-6 py-3 nav-link">Contact</a>
     </div>
   </header>
 
   <!-- Page Header -->
   <section class="page-header">
-    <h1 data-aos="fade-up" class="mb-4">Photo Gallery</h1>
+    <h1 data-aos="fade-up">Community Impact</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Exploring how decentralized solar energy empowers communities across Africa.</p>
   </section>
 
-  <!-- -----------------------  GALLERY GRID ------------------------------- -->
-  <main class="container mx-auto px-6 py-12 space-y-8">
-    <!-- (Gallery rows remain exactly the same as your original HTML) -->
+  <!-- Article content -->
+  <main class="article-content px-6 py-12" data-aos="fade-up">
+    <p class="text-gray-500 text-sm mb-6">By Timon Rowntree | January 2026</p>
 
+    <p>
+      Access to reliable energy is a key driver of socio-economic development. Decentralized solar mini-grids have become an essential solution for communities that are underserved by national grids. By combining innovative technology, local engagement, and sustainable financing, these systems ensure that electricity reaches households, schools, and health clinics efficiently and affordably.
+    </p>
 
-    <!-- 1st row -->
-    <div data-aos="fade-up">
-      <div class="w-full overflow-hidden rounded-lg shadow-lg">
-        <img src="/images/Africa_images/DSCF0678.JPG" alt="Big Landscape Image" class="w-full h-auto object-cover">
-      </div>
-      <p class="mt-2 text-sm text-gray-500 text-center">Freetown, Sierra Leone</p>
-    </div>
+    <h2>Empowering Local Communities</h2>
+    <p>
+      Community involvement is crucial. Local operators are trained to manage the mini-grid, ensuring ongoing operation, while residents are educated on efficient electricity usage. This approach not only provides power but also creates jobs and fosters skills development.
+    </p>
 
-    <!-- 2nd row -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-      <!-- Portrait on left (keeps portrait height on mobile) -->
-      <div data-aos="fade-up" data-aos-delay="200">
-        <div class="overflow-hidden rounded-lg shadow-lg md:h-[625px]">
-          <img src="/images/Africa_images/DSCF1477.JPG" 
-              alt="Portrait Image" 
-              class="w-full h-full object-cover">
-        </div>
-        <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
-      </div>
+    <h2>Reliable and Affordable Energy</h2>
+    <p>
+      By using high-quality solar panels and robust storage systems, these mini-grids minimize downtime and maximize output. Communities benefit from a reliable power supply that supports education, health, and small businesses, improving overall quality of life.
+    </p>
 
-      <!-- Landscape on right (fills portrait height on desktop, full width on mobile) -->
-      <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
-        <div class="overflow-hidden rounded-lg shadow-lg h-auto md:h-[625px] w-full">
-          <img src="/images/Africa_images/DSCF1443.jpg" 
-              alt="Landscape Image" 
-              class="w-full h-full object-cover">
-        </div>
-        <p class="mt-2 text-sm text-gray-500 text-center">Nairobi, Kenya</p>
-      </div>
-    </div>
+    <h2>Scaling Impact Across Africa</h2>
+    <p>
+      Successful projects in Sierra Leone, Kenya, and Benin demonstrate that community-focused renewable energy is scalable. With proper design, financing, and local engagement, these mini-grids can expand rapidly, reaching more communities while maintaining sustainability and affordability.
+    </p>
+
+    <p>
+      <a href="/#articles" class="btn-back mt-6 inline-block">← Back to Articles</a>
+    </p>
+  </main>
 
   <!-- Back to Top button -->
-  <button id="backToTop"
-          class="fixed bottom-8 right-8 z-50 px-6 py-3 rounded-lg text-gray-800 shadow-lg opacity-0 transition-opacity duration-700"
-          style="background-color: rgb(81, 230, 0);"
-          onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
-          onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'"
+  <button id="backToTop" class="fixed bottom-8 right-8 z-50 px-6 py-3 rounded-lg text-gray-800 shadow-lg opacity-0 transition-opacity duration-700"
           aria-label="Back to top">
     Back to Top
   </button>
 
-
-  <!-- ----------------------- SCRIPTS ------------------------------- -->
+  <!-- Scripts -->
   <script>
-    // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // Back to top button
     const backToTop = document.getElementById('backToTop');
     const footer = document.querySelector('footer');
     window.addEventListener('scroll', () => {
-      const footerTop = footer.getBoundingClientRect().top;
+      const footerTop = footer ? footer.getBoundingClientRect().top : document.body.scrollHeight;
       const windowHeight = window.innerHeight;
-      if (footerTop < windowHeight) {
-        backToTop.classList.remove('opacity-0');  
-        backToTop.classList.add('opacity-100');
-      } else {
-        backToTop.classList.remove('opacity-100');
-        backToTop.classList.add('opacity-0');     
-      }
+      if (window.scrollY > 200) backToTop.classList.add('opacity-100'); else backToTop.classList.remove('opacity-100');
     });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // AOS
     AOS.init({ once: true });
 
-    // Navbar active link on scroll
-    const sections = ['home','about','expertise','articles',,'gallery','contact'];
+    // Navbar active link
+    const sections = ['home','about','expertise','articles','gallery','contact'];
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
