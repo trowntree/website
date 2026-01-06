@@ -120,8 +120,8 @@
       <nav class="hidden md:flex space-x-6">
         <a href="/#home" class="nav-link">Home</a>
         <a href="/#about" class="nav-link">About</a>
-        <a href="/#vision" class="nav-link">Vision</a>
         <a href="/#expertise" class="nav-link">Expertise</a>
+        <a href="/#vision" class="nav-link">Vision</a>
         <a href="/#gallery" class="nav-link active">Gallery</a>
         <a href="/#contact" class="nav-link">Contact</a>
       </nav>
@@ -140,8 +140,8 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-16 left-0 w-full shadow-lg z-40">
       <a href="/#home" class="block px-6 py-3 nav-link">Home</a>
       <a href="/#about" class="block px-6 py-3 nav-link">About</a>
-      <a href="/#vision" class="block px-6 py-3 nav-link">Vision</a>
       <a href="/#expertise" class="block px-6 py-3 nav-link">Expertise</a>
+      <a href="/#vision" class="block px-6 py-3 nav-link">Vision</a>
       <a href="/#gallery" class="block px-6 py-3 nav-link active">Gallery</a>
       <a href="/#contact" class="block px-6 py-3 nav-link">Contact</a>
     </div>
@@ -299,8 +299,8 @@
         <ul class="space-y-2">
           <li><a href="/#home" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
           <li><a href="/#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
-          <li><a href="/#vision" class="text-gray-400 hover:text-white transition-colors duration-200">Vision</a></li>
           <li><a href="/#expertise" class="text-gray-400 hover:text-white transition-colors duration-200">Expertise</a></li>
+          <li><a href="/#vision" class="text-gray-400 hover:text-white transition-colors duration-200">Vision</a></li>
           <li><a href="/#gallery" class="text-gray-400 hover:text-white transition-colors duration-200">Gallery</a></li>
           <li><a href="/#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
         </ul>
@@ -370,7 +370,7 @@
     AOS.init({ once: true });
 
     // Navbar active link on scroll
-    const sections = ['home','about','vision','expertise','gallery','contact'];
+    const sections = ['home','about','expertise','vision',,'gallery','contact'];
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
