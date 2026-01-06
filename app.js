@@ -14,14 +14,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 const articles = [
   {
     title: 'Heatmaps',
-    summary: 'A focus on inclusive access, reaching underserved communities and empowering people with reliable and affordable energy.',
+    summary: 'An intuitive framework for turning operational mini-grid data into action.',
     link: '/article_heatmaps',
     image: '/images/com2.png'
   },
   {
-    title: 'Decentralised Renewable Energy',
-    summary: 'Modern, decentralised energy solutions designed for rapid implementation and scalable impact across communities and economies.',
-    link: '/article_decentralised_energy',
+    title: 'Capacity Utlisation',
+    summary: 'Exploring capacity utilisation as the all-encompassing metric for system performance',
+    link: '/article_capacity_utilisation',
     image: '/images/hernen-solar.jpg'
   },
   {
@@ -55,8 +55,8 @@ app.get('/article_heatmaps', (req, res) => {
   res.render('article_heatmaps');
 });
 
-app.get('/article_decentralised_energy', (req, res) => {
-  res.render('article_decentralised_energy');
+app.get('/article_capacity_utilisation', (req, res) => {
+  res.render('article_capacity_utilisation');
 });
 
 app.get('/article_innovative_financing', (req, res) => {
