@@ -25,9 +25,9 @@ const articles = [
     image: '/images/hernen-solar.jpg'
   },
   {
-    title: 'Innovative Financing',
+    title: 'Artificial Intelligence',
     summary: 'Creative financing mechanisms to fund renewable energy projects and expand reliable power access.',
-    link: '/article_innovative_financing',
+    link: '/article_ai',
     image: '/images/Africa_images/DSCF0367.JPG'
   }
 ];
