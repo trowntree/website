@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/images/Africa_images/TR%20Symbol_Lime_blue.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Decentralised Renewable Energy Article by Timon Rowntree">
+  <meta name="keywords" content="decentralized energy, renewable energy, solar mini-grids, off-grid solar, Africa, sustainable energy">
+  <meta name="author" content="Timon Rowntree">
+  <title>Decentralised Renewable Energy | Timon Rowntree</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --font-text: 200; --font-header: 100; }
+    body { font-family: 'Sofia Sans', sans-serif; font-weight: var(--font-text); scroll-behavior: smooth; background-color: #f9fafb; color: #1f2937; }
+    h1,h2,h3,h4,h5,h6 { font-weight: var(--font-header); line-height: 1.2; }
+
+    /* Navbar */
+    #navbar { background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); transition: all 0.3s ease; height: 60px; z-index: 50; }
+    #navbar.scrolled { background: rgba(255,255,255,1); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .nav-link { position: relative; padding: 6px 10px; transition: color 0.2s ease, background 0.3s ease; color: rgb(31,41,55); font-weight: 500; }
+    .nav-link:hover { color: rgb(81,230,0) !important; border-radius: 4px; }
+    .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background: rgb(81,230,0); transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active { color: rgb(81,230,0) !important; font-weight: 700; }
+
+    /* Page header */
+    .page-header { padding-top: 120px; padding-bottom: 40px; text-align: center; }
+    .page-header h1 { color: rgb(81,230,0); font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .page-header p { color: #4b5563; font-size: 1.125rem; }
+
+    /* Article content */
+    .article-content { max-width: 800px; margin: 0 auto; line-height: 1.75; font-size: 1.125rem; color: #374151; }
+    .article-content h2, .article-content h3 { margin-top: 2rem; color: rgb(44,236,255); }
+
+    /* Back button */
+    #backToTop { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; background-color: rgb(81, 230, 0); color: #000; text-decoration: none; transition: background 0.2s; }
+    #backToTop:hover { background-color: rgb(44,236,255); color: #000; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed w-full flex items-center px-6">
+    <div class="container mx-auto flex justify-between items-center h-full">
+      <a href="/#home"><img src="/images/Africa_images/TR%20Logo_Lime-1.png" alt="Logo" class="h-12 w-auto"></a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="/#home" class="nav-link">Home</a>
+        <a href="/#about" class="nav-link">About</a>
+        <a href="/#expertise" class="nav-link">Expertise</a>
+        <a href="/#articles" class="nav-link active">Articles</a>
+        <a href="/#gallery" class="nav-link">Gallery</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-16 left-0 w-full shadow-lg z-40">
+      <a href="/#home" class="block px-6 py-3 nav-link">Home</a>
+      <a href="/#about" class="block px-6 py-3 nav-link">About</a>
+      <a href="/#expertise" class="block px-6 py-3 nav-link">Expertise</a>
+      <a href="/#articles" class="block px-6 py-3 nav-link active">Articles</a>
+      <a href="/#gallery" class="block px-6 py-3 nav-link">Gallery</a>
+      <a href="/#contact" class="block px-6 py-3 nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1 data-aos="fade-up">Decentralised Renewable Energy</h1>
+    <p data-aos="fade-up" data-aos-delay="100">How distributed solar and renewable systems are transforming energy access in Africa.</p>
+  </section>
+
+  <!-- Article content -->
+  <main class="article-content px-6 py-12" data-aos="fade-up">
+    <p class="text-gray-500 text-sm mb-6">By Timon Rowntree | January 2026</p>
+
+    <p>
+      Decentralised renewable energy systems provide communities with energy independence and resilience. These systems reduce reliance on central grids, offer faster deployment, and can be tailored to local needs, providing electricity for households, businesses, and public services.
+    </p>
+
+    <h2>Localized Energy Solutions</h2>
+    <p>
+      By implementing small-scale solar, wind, and hybrid systems, communities can generate their own power. Local operators are trained in maintenance and monitoring, creating jobs and technical skills while ensuring the system operates efficiently.
+    </p>
+
+    <h2>Resilience and Sustainability</h2>
+    <p>
+      Decentralised systems minimize the impact of grid outages and support sustainable energy usage. With proper design and quality components, these systems offer reliable electricity, reduce carbon footprints, and enable economic growth in underserved regions.
+    </p>
+
+    <h2>Scaling Across the Continent</h2>
+    <p>
+      Successful examples from West and East Africa show that decentralised energy can scale sustainably. With careful planning, community engagement, and innovative financing models, these projects expand access to clean energy across rural and peri-urban areas.
+    </p>
+
+    <!-- Back to Articles button -->
+    <div class="py-8 flex justify-center" data-aos="fade-up" data-aos-delay="500">
+      <a href="/#articles"
+         class="w-full sm:w-auto px-8 py-3 rounded-lg text-center text-gray-800 transition-colors duration-200"
+         style="background-color: rgb(81, 230, 0);"
+         onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
+         onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'">
+         ← Back to Articles
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="flex items-start justify-center mt-1 -ml-12">
+        <img src="images/Africa_images/TR%20Symbol_Lime_blue.png" alt="Timon Rowntree Logo" style="height: 130px; width: auto;">
+      </div>
+      <div>
+        <h3 class="text-xl mb-4" style="color: rgb(44, 236, 255);">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">About</a></li>
+          <li><a href="#expertise" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Expertise</a></li>
+          <li><a href="#articles" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Articles</a></li>
+          <li><a href="#gallery" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Gallery</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl mb-4" style="color: rgb(44, 236, 255);">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="#gallery" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl mb-4" style="color: rgb(44, 236, 255);">Contact Info</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:timon@rowntree.nl" class="text-gray-400 hover:text-[rgb(81,230,0)] transition-colors duration-200">timon@rowntree.nl</a></li>
+          <li class="text-gray-400">
+            Martinus Houttuynhof<br>
+            2341 PR Oegstgeest<br>
+            Zuid-Holland<br>
+            The Netherlands
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container mx-auto mt-12 text-center">
+      <p class="text-gray-400">© 2025 Timon Rowntree. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top button -->
+  <button id="backToTop" class="fixed bottom-8 right-8 z-50 px-6 py-3 rounded-lg text-gray-800 shadow-lg opacity-0 transition-opacity duration-700" aria-label="Back to top">Back to Top</button>
+
+  <!-- Scripts -->
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    const backToTop = document.getElementById('backToTop');
+    const footer = document.querySelector('footer');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) backToTop.classList.add('opacity-100'); else backToTop.classList.remove('opacity-100');
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    AOS.init({ once: true });
+
+    const sections = ['home','about','expertise','articles','gallery','contact'];
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + 70;
+      sections.forEach((sec, i) => {
+        const sectionEl = document.querySelector(`#${sec}`);
+        if(sectionEl && scrollPos >= sectionEl.offsetTop && scrollPos < sectionEl.offsetTop + sectionEl.offsetHeight) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          navLinks[i].classList.add('active');
+        }
+      });
+      if(window.scrollY > 10) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+  </script>
+  <script src="/js/main.js" defer></script>
+
+</body>
+</html>
