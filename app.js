@@ -13,9 +13,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Homepage articles data (optional, for dynamic rendering)
 const articles = [
   {
-    title: 'Community Impact',
+    title: 'Heatmaps',
     summary: 'A focus on inclusive access, reaching underserved communities and empowering people with reliable and affordable energy.',
-    link: '/article_community_impact',
+    link: '/article_heatmaps',
     image: '/images/com2.png'
   },
   {
@@ -51,8 +51,8 @@ app.get('/gallery', (req, res) => {
 });
 
 // Routes for articles
-app.get('/article_community_impact', (req, res) => {
-  res.render('article_community_impact');
+app.get('/article_heatmaps', (req, res) => {
+  res.render('article_heatmaps');
 });
 
 app.get('/article_decentralised_energy', (req, res) => {
