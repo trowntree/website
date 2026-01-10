@@ -130,29 +130,34 @@
 
   <!-- Page Header -->
   <section class="page-header bg-gray-50 pt-28 pb-8 px-6">
-    <div class="container mx-auto max-w-3xl relative">
+    <div class="container mx-auto max-w-3xl">
 
-      <!-- Title and Subtitle -->
-      <div class="text-center">
-        <h1 class="text-3xl md:text-4xl font-light text-gray-900" data-aos="fade-up">
-          Heatmaps – Visualising Mini-Grid Portfolio Performance
-        </h1>
-        <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">
-          An intuitive framework for turning operational mini-grid data into action.
-        </p>
+      <!-- Flex container: title/subtitle + button -->
+      <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+
+        <!-- Title and Subtitle -->
+        <div class="text-center md:text-left md:flex-1">
+          <h1 class="text-3xl md:text-4xl font-light text-gray-900 inline-block" data-aos="fade-up">
+            Heatmaps – Visualising Mini-Grid Portfolio Performance
+          </h1>
+          <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">
+            An intuitive framework for turning operational mini-grid data into action.
+          </p>
+        </div>
+
+        <!-- Next Article Button -->
+        <div class="mt-6 md:mt-0 md:ml-6 self-start md:self-center flex-shrink-0" data-aos="fade-up" data-aos-delay="300">
+          <a href="/article_capacity_utilisation"
+            class="px-8 py-3 rounded-lg text-center text-gray-800 transition-colors duration-200"
+            style="background-color: rgb(81, 230, 0);"
+            onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
+            onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'">
+            Next Article →
+          </a>
+        </div>
+
       </div>
-
-      <!-- Next Article Button -->
-      <div class="absolute top-1/2 left-full ml-6 transform -translate-y-1/2" data-aos="fade-up" data-aos-delay="300">
-        <a href="/article_capacity_utilisation"
-          class="px-8 py-3 rounded-lg text-center text-gray-800 transition-colors duration-200"
-          style="background-color: rgb(81, 230, 0);"
-          onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
-          onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'">
-          Next Article →
-        </a>
-      </div>
-
+      
     </div>
   </section>
 
