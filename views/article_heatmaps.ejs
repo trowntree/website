@@ -138,10 +138,139 @@
   <main class="article-content px-6 py-12" data-aos="fade-up">
     <p class="text-gray-500 text-sm mb-6">By Timon Rowntree | January 2026</p>
 
+    <h1 class="text-2xl font-bold mb-4">Heatmaps - Visualising Mini-Grid Portfolio Performance</h1>
+    <h2 class="text-xl font-semibold mb-6">An intuitive framework for turning mini-grid operational data into action</h2>
+
     <p>
-      Coming soon! 
+      Solar mini-grids have become one of the primary solutions for expanding electricity access in unconnected rural areas of Sub-Saharan Africa (SSA) and other emerging markets. Today, a variety of developers construct and operate mini-grids, and the metrics to take the pulse of their portfolios are largely agreed upon across the sector. Indicators such as the number of active customers, energy consumption and average consumption per user (ACPU), revenue and average revenue per user (ARPU), technical and non-technical losses, and system uptime form a common language for stakeholders in the energy access sector.
     </p>
 
+    <p>
+      In contrast to the broad consensus on which metrics matter, less attention is paid to how these metrics are visualised—both internally for operational teams and externally for investors, regulatory bodies, and governments. Insights from behavioural science show that the way information is presented significantly impacts perception and action. Ineffectively designed visualisations can cause confusion, misunderstanding, or even distrust—especially among viewers with low graphical literacy [1]. In seeking improvements in operational effectiveness, how can we present data to help teams quickly identify issues and prioritise actions across a portfolio of mini-grids?
+    </p>
+
+    <h2 class="text-xl font-semibold mt-8 mb-4">The Importance of Data Presentation – The ‘Paceometer’</h2>
+    <p>
+      To illustrate the importance of how data is presented, consider an example (Figure 1). The figure shows a ‘paceometer’ [2]. On the inner ring of numbers, you’ll see a familiar miles-per-hour indication, representing the distance travelled per unit of time. On the outer ring, there is a mathematically equivalent representation: units of time per distance travelled—in this case, ‘minutes per 10 miles’.
+    </p>
+
+    <figure class="my-6">
+      <img src="images/figure1.png" alt="Paceometer: Comparing speed and pace" class="mx-auto">
+      <figcaption class="text-sm text-gray-500">Figure 1 – The ‘Paceometer’: Comparing Speed (distance/time) with Pace (time/distance) [2]</figcaption>
+    </figure>
+
+    <p>
+      This perspective shows that accelerating 10 mph at low speeds yields substantial time savings. Increasing speed from 10 to 20 mph saves 30 minutes over 10 miles, whereas the same increase at 70 mph saves barely a minute, while risks rise exponentially. The paceometer clearly communicates that moderate speeds are beneficial, but excessive speeds are risky.
+    </p>
+
+    <p>
+      By presenting the same information differently, a new story emerges. Were cars equipped with paceometers rather than speedometers, lives could be saved as drivers naturally moderated speed. This demonstrates how small changes in data presentation can dramatically shape perception and behavior.
+    </p>
+
+    <h2 class="text-xl font-semibold mt-8 mb-4">Introducing Heatmaps for Actionable Mini-Grid Insights</h2>
+    <p>
+      Effective visualisation begins with understanding the intended users. Operational teams use data to prioritise operations & maintenance (O&M) actions, while investors, regulators, and governments monitor investment performance and energy access progress. The greatest value of a well-designed interface lies with operators, who have the shortest feedback loop between data and action.
+    </p>
+
+    <p>
+      Heatmaps are a reorganised view of the data these teams are likely already monitoring. They build on time-averaging metrics and show performance differences within and between mini-grid sites in one view.
+    </p>
+
+    <p>
+      Heatmaps can be created for any metric—energy consumption, ACPU, ARPU, and more—provided the data is available. Drawing on the paceometer example, the goal is to create visualisations that clearly guide operational decisions, showing at a glance where attention and resources are most urgently needed.
+    </p>
+
+    <figure class="my-6">
+      <img src="images/figure2.png" alt="Heatmap of energy consumption" class="mx-auto">
+      <figcaption class="text-sm text-gray-500">Figure 2 – Heatmap for visualising the ‘energy consumption’ metric over a portfolio of 15 mini-grids. Row-based colouring highlights changes within sites.</figcaption>
+    </figure>
+
+    <p>
+      Heatmap coloring can be applied in two ways: row-based coloring highlights changes within a single mini-grid over time, while global coloring compares metrics between mini-grids. Green indicates desirable values (e.g., high active customers or consumption), red signals low performance, helping operators prioritise actions.
+    </p>
+
+    <h3 class="text-lg font-semibold mt-6 mb-3">Using Heatmaps</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><strong>Observation 1 – A mini-grid that is completely offline:</strong> Energy consumption drops to zero, turning cells red and signalling operator action. This also quantifies lost energy sales, aiding prioritisation.</li>
+      <li><strong>Observation 2 – Reduced capacity:</strong> Partial system faults reduce consumption in specific weeks, indicating issues like inverter failure or distribution problems.</li>
+      <li><strong>Observation 3 – Gradual performance degradation:</strong> Dust accumulation or poor panel cleaning may cause slow declines in production, visible as gradual color shifts.</li>
+    </ul>
+
+    <p>
+      Heatmaps for different metrics reveal other insights. For example, energy losses (%) can highlight sites with unusually high losses (Figure 3), and capacity utilisation shows which mini-grids operate below potential (Figure 4).
+    </p>
+
+    <figure class="my-6">
+      <img src="images/figure3.png" alt="Heatmap of energy losses" class="mx-auto">
+      <figcaption class="text-sm text-gray-500">Figure 3 – Heatmap for visualising ‘energy losses’ across 15 mini-grids. Global colouring highlights differences between sites.</figcaption>
+    </figure>
+
+    <figure class="my-6">
+      <img src="images/figure4.png" alt="Heatmap of capacity utilisation" class="mx-auto">
+      <figcaption class="text-sm text-gray-500">Figure 4 – Heatmap for visualising ‘capacity utilisation’ across 15 mini-grids. Global colouring highlights differences between sites.</figcaption>
+    </figure>
+
+    <ul class="list-disc pl-6 mb-4">
+      <li><strong>Observation 4 – Excessive energy losses:</strong> Sites with consistently high losses can be flagged for inspection and intervention.</li>
+      <li><strong>Observation 5 – Underperforming capacity:</strong> Mini-grids operating below potential are identified, enabling targeted interventions and potential monetisation opportunities.</li>
+    </ul>
+
+    <p>
+      Beyond these, other metrics can be visualised similarly:
+    </p>
+
+    <ul class="list-disc pl-6 mb-4">
+      <li><strong>Active Customers:</strong> Identify clusters of offline customers even if total grid consumption remains stable.</li>
+      <li><strong>Revenues:</strong> Compare earnings between sites to help prioritise operational backlogs.</li>
+      <li><strong>PUE Performance:</strong> Metrics like leasing fees, e-bike swaps, or energy usage can reveal underperforming or high-potential sites.</li>
+      <li><strong>Powerhouse Temperature:</strong> Spot HVAC anomalies to prolong BESS lifetime.</li>
+    </ul>
+
+    <p>
+      Many other metrics can be visualised this way. Operators can select and design heatmaps that best support their operational practices.
+    </p>
+
+    <h2 class="text-xl font-semibold mt-8 mb-4">Creating & Using Heatmaps in Your Organisation</h2>
+    <p>
+      Heatmaps are straightforward to create. At a basic level, a colour-coded Excel sheet built from processed data is sufficient. The key prerequisite is a functioning data pipeline—from smart-meter to central data warehouse.
+    </p>
+
+    <ul class="list-disc pl-6 mb-4">
+      <li><strong>Basic implementation:</strong> Scripted extraction from the database generating manual Excel heatmaps.</li>
+      <li><strong>Intermediate implementation:</strong> Automated generation embedded in dashboards or internal tools.</li>
+      <li><strong>Advanced implementation:</strong> Automated heatmaps with alerts for notable changes, notifying teams immediately of anomalies.</li>
+    </ul>
+
+    <p>
+      Operators can embed heatmaps directly into routines, establishing a continuous feedback loop between data and action. Aligning discussions with the heatmap resolution (e.g., weekly) helps maintain focus.
+    </p>
+
+    <p>
+      Heatmaps are straightforward to integrate into workflows. Complex metrics are reduced to simple color cues: green indicates optimal performance, red signals issues, and gradients reveal trends over time.
+    </p>
+
+    <h2 class="text-xl font-semibold mt-8 mb-4">Conclusion</h2>
+    <p>
+      The way energy access data is presented greatly affects operational effectiveness. Heatmaps offer an intuitive way to monitor mini-grid portfolios and distributed energy assets. They condense complex data into a glanceable view, highlighting anomalies that might otherwise remain hidden.
+    </p>
+
+    <p>
+      Heatmaps rely on data most mini-grid operators already collect. Their primary value is with operators, but they also provide coherent reporting for investors, regulators, and governments.
+    </p>
+
+    <p>
+      Well-designed visualisations alone do not guarantee operational success, but they are critical in building capable, responsive operators and resilient businesses. By making complex information easily interpretable, heatmaps enable faster, informed decisions, improving performance and advancing universal electricity access.
+    </p>
+
+    <h2 class="text-xl font-semibold mt-8 mb-4">References</h2>
+    <ul class="list-disc pl-6 mb-6 text-sm text-gray-500">
+      <li>[1] S. L. Franconeri, L. M. Padilla, P. Shah, J. M. Zacks, and J. Hullman, “The science of visual data communication: What works,” Psychological Science in the Public Interest, vol. 22, no. 3, pp. 110–161, Dec. 2021. doi:10.1177/15291006211051956.</li>
+      <li>[2] E. Peer and E. Gamliel, “Pace yourself: Improving time saving judgments when increasing activity speed,” Judgment and Decision Making, vol. 8, no. 2, pp. 106–115, Mar. 2013. cambridge.org</li>
+    </ul>
+
+    <p>
+      I welcome comments and discussions. Feel free to share the article and don’t hesitate to reach out with any questions.
+    </p>
 
     <!-- Back to Articles button -->
     <div class="py-8 flex justify-center" data-aos="fade-up" data-aos-delay="500">
