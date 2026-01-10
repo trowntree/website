@@ -78,9 +78,32 @@
   </header>
 
   <!-- Page Header -->
-  <section class="page-header">
-    <h1 data-aos="fade-up">Capacity Utilisation in Distributed Energy Systems</h1>
-    <p data-aos="fade-up" data-aos-delay="100">Exploring capacity utilisation as the all-encompassing metric for system performance. </p>
+  <section class="page-header bg-gray-50 pt-28 pb-8 px-6 relative">
+    <div class="container mx-auto max-w-3xl text-center">
+
+      <!-- Title and Subtitle -->
+      <h1 class="text-3xl md:text-4xl font-light text-gray-900 inline-block" data-aos="fade-up">
+        Capacity Utilisation in Distributed Energy Systems
+      </h1>
+      <p class="text-lg text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">
+        Exploring capacity utilisation as the all-encompassing metric for system performance.
+      </p>
+
+      <!-- Previous Article Button (desktop only) -->
+      <div class="hidden md:block absolute top-1/2 left-36 transform -translate-y-1/2" data-aos="fade-up" data-aos-delay="300">
+        <a href="/article_heatmaps" class="nav-link text-lg font-light">
+          ← Previous Article
+        </a>
+      </div>
+
+      <!-- Next Article Button (desktop only) -->
+      <div class="hidden md:block absolute top-1/2 right-36 transform -translate-y-1/2" data-aos="fade-up" data-aos-delay="300">
+        <a href="/article_ai" class="nav-link text-lg font-light">
+          Next Article →
+        </a>
+      </div>
+
+    </div>
   </section>
 
   <!-- Article content -->
@@ -145,7 +168,14 @@
   </footer>
 
   <!-- Back to Top button -->
-  <button id="backToTop" class="fixed bottom-8 right-8 z-50 px-6 py-3 rounded-lg text-gray-800 shadow-lg opacity-0 transition-opacity duration-700" aria-label="Back to top">Back to Top</button>
+  <button id="backToTop"
+          class="fixed bottom-8 right-8 z-50 px-6 py-3 rounded-lg text-gray-800 shadow-lg opacity-0 transition-opacity duration-700"
+          style="background-color: rgb(81, 230, 0); font-weight: 200;"
+          onmouseover="this.style.backgroundColor='rgb(44, 236, 255)'" 
+          onmouseout="this.style.backgroundColor='rgb(81, 230, 0)'"
+          aria-label="Back to top">
+    Back to Top
+  </button>
 
   <!-- Scripts -->
   <script>
