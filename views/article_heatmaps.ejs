@@ -92,14 +92,34 @@
       }
       #backToTop:hover { background-color: rgb(44,236,255); color: #000; }
 
-      /* Fraction for capacity utilisation */
+      .equation {
+        display: flex;
+        text-indent: 1.5em;  /* indent like normal paragraph */
+        margin-bottom: 1.5em;
+        align-items: center;  /* vertical center of the tallest item */
+      }
+      .equation-left {
+        flex: 0 0 auto;
+        margin-right: 0.5em;
+      }
+      .equation-main {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .equation-number {
+        flex: 0 0 auto;
+        margin-left: 1em;       /* space from equation */
+        text-align: right;      /* align right */
+      }
+
+      /* Fraction for Capacity Utilisation */
       .fraction {
         display: inline-flex;
         flex-direction: column;
         align-items: center;
         line-height: 1.2;
         vertical-align: middle;
-        margin-left: 1.5em; /* indent to match paragraph text */
       }
       .fraction .top {
         padding: 0 4px;
@@ -108,7 +128,7 @@
         border-top: 1px solid currentColor;
         padding: 2px 4px 0 4px;
       }
-  </style>
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -299,28 +319,30 @@
       A heatmap based on <em>capacity utilisation</em> can highlight sites operating below their potential (Figure 4). The capacity utilisation metric compares energy sold, on the one hand, to the theoretically available energy for sales on the other. Mathematically, it is expressed as:
     </p>
 
-    <p class="mb-6" style="text-indent: 1.5em;">
-      Capacity Utilisation =
-      <span class="fraction">
-        <span class="top">Energy Sold</span>
-        <span class="bottom">Theoretical Available Energy</span>
+    <div class="equation">
+      <span class="equation-left">Capacity Utilisation =</span>
+      <span class="equation-main">
+        <span class="fraction">
+          <span class="top">Energy Sold</span>
+          <span class="bottom">Theoretical Available Energy</span>
+        </span>
+        × 100%
       </span>
-      × 100% &nbsp;&nbsp;&nbsp; (Eq. 1)
-    </p>
+      <span class="equation-number">(Eq. 1)</span>
+    </div>
 
     <p class="mb-6">
       In this formula, the energy sold is the consumption as measured at the customer smart-meters (in kWh). The theoretical available energy for sales (also in kWh) is computed by:
     </p>
 
-    <p class="mb-6" style="text-indent: 1.5em; display: flex;">
-      <span style="flex: 0 0 auto; margin-right: 0.5em;">
-        Theoretical Available Energy =
-      </span>
-      <span style="flex: 1 1 auto; display: flex; flex-direction: column;">
+    <div class="equation">
+      <span class="equation-left">Theoretical Available Energy =</span>
+      <span class="equation-main">
         <span>(Installed PV Capacity × Specific Irradiance)</span>
-        <span>− Powerhouse Losses − Distribution Losses &nbsp;&nbsp;&nbsp; (Eq. 2)</span>
+        <span>− Powerhouse Losses − Distribution Losses</span>
       </span>
-    </p>
+      <span class="equation-number">(Eq. 2)</span>
+    </div>
 
     <p class="mb-6">
       Where here the Installed PV Capacity is the site capacity in kWp and the Specific Irradiance is the energy yield per kWp installed per day (kWh/kWp), typically in the 3.5 - 4.5 range for a typical mini-grid on the African continent. The seasonal variation of this number should, and can be quite easily, taken into account through irradiance data in simulation tools like PVSyst, or open source resources such as Global Solar Atlas or PVGIS. The Powerhouse Losses and Distribution Losses can be estimated through equipment datasheets.
