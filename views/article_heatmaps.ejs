@@ -273,12 +273,29 @@
     </ul>
 
     <!-- Section  -->
+    <!-- Section -->
     <h3 class="text-xl mb-1" style="color: rgb(81,230,0); font-weight: 300;">
       Example 3 - Heatmap for <em>Capacity Utilisation</em>
     </h3>
 
     <p class="mb-6">
-      A heatmap based on <em>capacity utilisation</em> - comparing energy sold to the theoretically available energy for sales - can highlight sites operating below their potential (Figure 4).
+      A heatmap based on <em>capacity utilisation</em> can highlight sites operating below their potential (Figure 4). The capacity utilisation metric compares energy sold, on the one hand, to the theoretically available energy for sales on the other. Mathematically, it is expressed as:
+    </p>
+
+    <p class="mb-6">
+      <strong>Capacity Utilisation (CU)</strong> = (Energy Sold / Theoretical Available Energy For Sales) × 100% &nbsp;&nbsp;&nbsp; (Eq. 1)
+    </p>
+
+    <p class="mb-6">
+      In this formula, the energy sold is the consumption as measured at the customer smart-meters (in kWh). The theoretical available energy for sales (also in kWh) is computed by:
+    </p>
+
+    <p class="mb-6">
+      <strong>Theoretical Available Energy For Sales</strong> = (Installed PV Capacity × Specific Irradiance) − Powerhouse Losses − Distribution Losses &nbsp;&nbsp;&nbsp; (Eq. 2)
+    </p>
+
+    <p class="mb-6">
+      Where here the Installed PV Capacity is the site capacity in kWp and the Specific Irradiance is the energy yield per kWp installed per day (kWh/kWp), typically in the 3.5 - 4.5 range for a typical mini-grid on the African continent. The seasonal variation of this number should, and can be quite easily, taken into account through irradiance data in simulation tools like PVSyst, or open source resources such as Global Solar Atlas or PVGIS. The Powerhouse Losses and Distribution Losses can be estimated through equipment datasheets.
     </p>
 
     <figure class="mb-6">
