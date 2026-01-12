@@ -340,18 +340,16 @@
     </p>
 
     <div class="equation" style="display: flex; align-items: flex-start;">
-      <!-- Left-hand side -->
-      <span class="equation-left" style="margin-right: 0;">Theoretical Available Energy =</span>
-
-      <!-- Right-hand side -->
-      <span class="equation-main" style="display: flex; flex-direction: column; gap: 0.1em; flex: 0 0 auto;">
-        <span style="display: inline-block;">(Installed PV Capacity × Specific Irradiance)</span>
-        <span style="display: inline-block;">− Powerhouse Losses − Distribution Losses</span>
-      </span>
+      <!-- Left + Right together -->
+      <div style="display: flex; flex-direction: column;">
+        <span>Theoretical Available Energy = (Installed PV Capacity × Specific Irradiance)</span>
+        <span>− Powerhouse Losses − Distribution Losses</span>
+      </div>
 
       <!-- Equation number -->
       <span class="equation-number" style="margin-left: auto; align-self: center;">(Eq. 2)</span>
     </div>
+
 
     <p class="mb-6">
       Where here the Installed PV Capacity is the site capacity in kWp and the Specific Irradiance is the energy yield per kWp installed per day (kWh/kWp), typically in the 3.5 - 4.5 range for a typical mini-grid on the African continent. The seasonal variation of this number should, and can be quite easily, taken into account through irradiance data in simulation tools like PVSyst, or open source resources such as Global Solar Atlas or PVGIS. The Powerhouse Losses and Distribution Losses can be estimated through equipment datasheets.
