@@ -212,11 +212,11 @@
       The Importance of Data Presentation – The ‘Paceometer’
     </h2>
 
-    <p class="mb-6">
+    <p class="mb-8">
       To illustrate the importance of how data is presented, consider an example (Figure 1). The figure shows a ‘paceometer’ [2]. On the inner ring of numbers, you’ll see a familiar miles-per-hour indication, representing the distance travelled per unit of time. On the outer ring, however, there is a more unconventional <em>but mathematically equivalent</em> representation. The fraction is flipped, showing units of time per distance travelled - in this case, ‘minutes per 10 miles’.     
     </p>
 
-    <figure class="mb-6">
+    <figure class="mb-8">
       <img src="images/IMG_1_pace_2.png" alt="Paceometer: Comparing speed and pace" class="mx-auto w-[50%]">
       <figcaption class="text-sm text-gray-500 text-center mt-2">Figure 1 – The ‘Paceometer’: Comparing Speed (distance/time) with Pace (time/distance) [2]</figcaption>
     </figure>
@@ -254,11 +254,11 @@
       Example 1 - Heatmap for <em>Energy Consumption</em>
     </h3>
 
-    <p class="mb-6">
+    <p class="mb-8">
       Figure 2 shows an example heatmap for <em>energy consumption</em> of a portfolio of 15 mini-grids. Each cell shows the average value of the metric over the past week for a given mini-grid (rows) at a specific point in time (columns). In this case, it shows the average daily energy consumption (kWh/day) for the week in question. The time-resolution can be adjusted to suit the operator’s needs – this example uses weekly averages, but daily or monthly columns could work too. More recent dates are shown towards the left of the map, older ones to the right. 
     </p>
 
-    <figure class="mb-6">
+    <figure class="mb-8">
       <img src="images/IMG_2_energy_consumption_HD.png" alt="Heatmap of energy consumption" class="mx-auto w-5/5">
       <figcaption class="text-sm text-gray-500 text-center mt-2">Figure 2 – An example heatmap, for visualising the <em>energy consumption</em> metric (in kWh/day) over a portfolio of 15 mini-grids. It is coloured in a row-based way to highlight changes within sites.</figcaption>
     </figure>
@@ -296,11 +296,11 @@
     </h3>
 
 
-    <p class="mb-6">
+    <p class="mb-8">
        Just as the previous section highlighted a heatmap for the <em>energy consumption</em> metric, similar heatmaps can be generated for other metrics, each revealing different aspects of mini-grid performance. Consider, for instance, a heatmap of <em>energy losses</em> (%), a metric that tracks the proportion of energy that is injected into a grid, but not sold (Figure 3). 
     </p>
 
-    <figure class="mb-6">
+    <figure class="mb-8">
       <img src="images/IMG_3_energy_losses_HD.png" alt="Heatmap of energy losses" class="mx-auto w-5/5">
       <figcaption class="text-sm text-gray-500 text-center mt-2">Figure 3 – An example heatmap, for visualising the <em>energy losses</em> metric (in %) over a portfolio of 15 mini-grids. It is coloured globally to highlight changes between sites.</figcaption>
     </figure>
@@ -353,11 +353,11 @@
       <span class="equation-number" style="margin-left: auto; align-self: center;">(Eq. 2)</span>
     </div>
 
-    <p class="mb-6">
-      Where here the <em>Installed PV Capacity</em> is the site capacity (in kWp) and the <em>Specific Irradiance</em> is the energy yield per kWp installed, per day (daily kWh/kWp installed), typically in the 3.5 - 4.5 range for a typical mini-grid on the African continent. The seasonal variation of this number should, and can be quite easily, taken into account through irradiance data in simulation tools like PVSyst, or open source resources such as <a href="https://globalsolaratlas.info/" style="color: rgb(81, 230, 0);" class="hover:underline" target="_blank" rel="noopener noreferrer">Global Solar Atlas</a> or <a href="https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en" style="color: rgb(81, 230, 0);" class="hover:underline" target="_blank" rel="noopener noreferrer">PVGIS</a>. The <em>Powerhouse Losses</em> and <em>Distribution Losses</em> can be estimated through equipment datasheets. The resulting capacity utilisation from Eq. 1 is then also an estimate, but accurate enough for a practical application. 
+    <p class="mb-8">
+      Where here the <em>Installed PV Capacity</em> is the site capacity (in kWp) and the <em>Specific Irradiance</em> is the energy yield per kWp installed, per day (daily kWh/kWp installed), typically in the 3.5 - 4.5 range for a typical mini-grid on the African continent. The seasonal variation of this number should, and can be quite easily, taken into account through irradiance data in simulation tools like PVSyst, or open source resources such as <a href="https://globalsolaratlas.info/" style="color: rgb(81, 230, 0);" class="hover:underline" target="_blank" rel="noopener noreferrer">Global Solar Atlas</a> or <a href="https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en" style="color: rgb(81, 230, 0);" class="hover:underline" target="_blank" rel="noopener noreferrer">PVGIS</a>. The <em>Powerhouse Losses</em> and <em>Distribution Losses</em> can be estimated through equipment datasheets. The resulting <em>Capacity Utilisation</em> from Eq. 1 is then also an estimate, but accurate enough for a practical application. 
     </p>
 
-    <figure class="mb-6">
+    <figure class="mb-8">
       <img src="images/IMG_4_cap_HD.png" alt="Heatmap of capacity utilisation" class="mx-auto">
       <figcaption class="text-sm text-gray-500 text-center mt-2">
         Figure 4 – Example heatmap visualising the <em>capacity utilisation</em> metric (in %) across a portfolio of 15 mini-grids. The colour scale is applied globally to emphasise differences between sites.
