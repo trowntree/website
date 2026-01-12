@@ -92,11 +92,30 @@
       }
       #backToTop:hover { background-color: rgb(44,236,255); color: #000; }
 
+      /* Fraction for Capacity Utilisation */
+      .fraction {
+        display: inline-flex;       /* keep it inline with other text */
+        flex-direction: column;     /* stack numerator/denominator */
+        align-items: center;
+        line-height: 1.2;
+        vertical-align: middle;     /* align with text baseline */
+        margin: 0 0.2em;            /* small space around fraction */
+      }
+      .fraction .top {
+        padding: 0 4px;
+      }
+      .fraction .bottom {
+        border-top: 1px solid currentColor;
+        padding: 2px 4px 0 4px;
+      }
+
+      /* Equation container */
       .equation {
         display: flex;
-        text-indent: 1.5em;  /* indent like normal paragraph */
-        margin-bottom: 1.5em;
-        align-items: center;  /* vertical center of the tallest item */
+        align-items: center;        /* all items on same baseline */
+        justify-content: space-between; /* left and right edges */
+        text-indent: 1.5em;        /* paragraph indent */
+        margin-bottom: 1em;
       }
       .equation-left {
         flex: 0 0 auto;
@@ -105,28 +124,12 @@
       .equation-main {
         flex: 1 1 auto;
         display: flex;
-        flex-direction: column;
+        align-items: center;        /* keep fraction and × 100% inline */
+        gap: 0.2em;
       }
       .equation-number {
         flex: 0 0 auto;
-        margin-left: 1em;       /* space from equation */
-        text-align: right;      /* align right */
-      }
-
-      /* Fraction for Capacity Utilisation */
-      .fraction {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        line-height: 1.2;
-        vertical-align: middle;
-      }
-      .fraction .top {
-        padding: 0 4px;
-      }
-      .fraction .bottom {
-        border-top: 1px solid currentColor;
-        padding: 2px 4px 0 4px;
+        margin-left: 1em;
       }
     </style>
 </head>
@@ -319,9 +322,9 @@
       A heatmap based on <em>capacity utilisation</em> can highlight sites operating below their potential (Figure 4). The capacity utilisation metric compares energy sold, on the one hand, to the theoretically available energy for sales on the other. Mathematically, it is expressed as:
     </p>
 
-    <div class="equation" style="display: flex; align-items: baseline; gap: 0.5rem;">
+    <div class="equation">
       <span class="equation-left">Capacity Utilisation =</span>
-      <span class="equation-main" style="display: flex; align-items: baseline; gap: 0.2em;">
+      <span class="equation-main">
         <span class="fraction">
           <span class="top">Energy Sold</span>
           <span class="bottom">Theoretical Available Energy</span>
@@ -330,6 +333,7 @@
       </span>
       <span class="equation-number">(Eq. 1)</span>
     </div>
+
 
     <p class="mb-6">
       In this formula, the energy sold is the consumption as measured at the customer smart-meters (in kWh). The theoretical available energy for sales (also in kWh) is computed by:
