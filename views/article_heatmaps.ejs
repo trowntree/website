@@ -299,7 +299,7 @@
         </text>
 
         <!-- Y-axis label -->
-        <text x="20" y="180" font-size="12" fill="#000" text-anchor="middle" transform="rotate(-90 20,180)">
+        <text x="25" y="180" font-size="12" fill="#000" text-anchor="middle" transform="rotate(-90 25,180)">
           Consumption (kWh)
         </text>
 
@@ -308,12 +308,11 @@
           Mini-Grids (MG)
         </text>
 
-        <!-- Common baseline -->
-        <line x1="50" y1="280" x2="450" y2="280" stroke="#000" stroke-width="1"/>
+        <!-- Common baseline / X-axis -->
+        <line x1="75" y1="280" x2="425" y2="280" stroke="#000" stroke-width="1"/>
 
-        <!-- Bars (centered, slightly wider & taller) -->
-        <g transform="translate(75,50)">
-          <!-- Bars -->
+        <!-- Bars -->
+        <g transform="translate(75,0)">
           <rect x="0"   y="120" width="50" height="160" fill="rgb(44,236,255)"/>
           <rect x="70"  y="60"  width="50" height="220" fill="rgb(44,236,255)"/>
           <rect x="140" y="140" width="50" height="140" fill="rgb(44,236,255)"/>
@@ -321,11 +320,11 @@
           <rect x="280" y="90"  width="50" height="190" fill="rgb(44,236,255)"/>
 
           <!-- Mini-grid labels -->
-          <text x="25"  y="300" font-size="11" text-anchor="middle">MG-01</text>
-          <text x="95"  y="300" font-size="11" text-anchor="middle">MG-02</text>
-          <text x="165" y="300" font-size="11" text-anchor="middle">MG-03</text>
-          <text x="235" y="300" font-size="11" text-anchor="middle">MG-04</text>
-          <text x="305" y="300" font-size="11" text-anchor="middle">MG-05</text>
+          <text x="25"  y="295" font-size="11" text-anchor="middle">MG-01</text>
+          <text x="95"  y="295" font-size="11" text-anchor="middle">MG-02</text>
+          <text x="165" y="295" font-size="11" text-anchor="middle">MG-03</text>
+          <text x="235" y="295" font-size="11" text-anchor="middle">MG-04</text>
+          <text x="305" y="295" font-size="11" text-anchor="middle">MG-05</text>
 
           <!-- Percentages above bars -->
           <text x="25"  y="110" font-size="11" fill="green" text-anchor="middle">+15%</text>
@@ -335,14 +334,13 @@
           <text x="305" y="80"  font-size="11" fill="red" text-anchor="middle">-5%</text>
         </g>
 
-        <!-- Figure caption (centered) -->
-        <text x="250" y="350" font-size="12" fill="#000" text-anchor="middle">
+        <!-- Figure caption (centered at bottom, separate from x-axis) -->
+        <text x="250" y="345" font-size="12" fill="#000" text-anchor="middle">
           Figure 3: Snapshot comparison of mini-grid consumption
         </text>
 
       </svg>
     </div>
-
 
 
     <p class="mb-6"></p>
