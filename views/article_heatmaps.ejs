@@ -382,7 +382,7 @@
     </p>
 
     <!-- Figure -->
-    <div class="mb-2 p-4 border rounded-lg bg-white">
+    <div class="mb-2 p-4 border rounded-lg bg-white" style="border-color: rgb(81,230,0);">
 
       <svg viewBox="0 0 500 260" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
 
@@ -407,67 +407,67 @@
         <!-- Baseline / X-axis -->
         <line x1="50" y1="200" x2="450" y2="200" stroke="#000" stroke-width="1"/>
 
-        <!-- Hash-style fill under the line -->
+        <!-- Define hash pattern -->
+        <defs>
+          <pattern id="hashPattern" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="4" stroke="#ccc" stroke-width="1"/>
+          </pattern>
+        </defs>
+
+        <!-- Hash-style fill under the lifted line -->
         <polyline 
           fill="url(#hashPattern)" 
           stroke="none" 
           points="
-            50,180 
-            90,160 
-            130,170 
-            170,150 
-            210,155 
-            250,140 
-            290,165 
-            330,150 
-            370,170 
-            410,160 
-            450,136
+            50,120 
+            90,100 
+            130,110 
+            170,90 
+            210,100 
+            250,85 
+            290,110 
+            330,95 
+            370,120 
+            410,105 
+            450,90
             450,200 
             50,200
           "/>
 
-        <!-- Define hash pattern -->
-        <defs>
-          <pattern id="hashPattern" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <line x1="0" y="0" x2="0" y2="4" stroke="#ccc" stroke-width="1"/>
-          </pattern>
-        </defs>
-
-        <!-- Line chart -->
+        <!-- Line chart (lifted trajectory, same blue) -->
         <polyline 
           fill="none" 
           stroke="rgb(44,236,255)" 
           stroke-width="2" 
           points="
-            50,180 
-            90,160 
-            130,170 
-            170,150 
-            210,155 
-            250,140 
-            290,165 
-            330,150 
-            370,170 
-            410,160 
-            450,136
+            50,120 
+            90,100 
+            130,110 
+            170,90 
+            210,100 
+            250,85 
+            290,110 
+            330,95 
+            370,120 
+            410,105 
+            450,90
           "/>
 
         <!-- Points -->
-        <circle cx="50"  cy="180" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="90"  cy="160" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="130" cy="170" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="170" cy="150" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="210" cy="155" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="250" cy="140" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="290" cy="165" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="330" cy="150" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="370" cy="170" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="410" cy="160" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="450" cy="136" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="50"  cy="120" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="90"  cy="100" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="130" cy="110" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="170" cy="90"  r="3" fill="rgb(44,236,255)"/>
+        <circle cx="210" cy="100" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="250" cy="85"  r="3" fill="rgb(44,236,255)"/>
+        <circle cx="290" cy="110" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="330" cy="95"  r="3" fill="rgb(44,236,255)"/>
+        <circle cx="370" cy="120" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="410" cy="105" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="450" cy="90"  r="3" fill="rgb(44,236,255)"/>
 
         <!-- End point label -->
-        <text x="450" y="125" font-size="9" fill="#000" text-anchor="middle">120 (+5%)</text>
+        <text x="450" y="80" font-size="9" fill="#000" text-anchor="middle">120 (+5%)</text>
 
       </svg>
     </div>
@@ -483,9 +483,10 @@
     </p>
 
     <!-- Principle box -->
-    <div class="mb-8 p-4 border rounded-lg" style="border-color: rgb(44,236,255); background-color: #f0f0f0;">
+    <div class="mb-8 p-4 border rounded-lg" style="border-color: rgb(81,230,0); background-color: #f0f0f0;">
       <strong>Principle:</strong> we need both a time-trend and a comparison between mini-grids, as well as absolute numbers in one view to know where to act.
     </div>
+
 
 
 
