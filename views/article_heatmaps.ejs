@@ -288,59 +288,76 @@
     <!-- Figure -->
     <div class="mb-10 p-4 border rounded-lg bg-white">
 
-      <svg viewBox="0 0 500 360" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 500 320" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
 
         <!-- Background -->
-        <rect x="0" y="0" width="500" height="360" fill="#ffffff"/>
+        <rect x="0" y="0" width="500" height="320" fill="#ffffff"/>
 
         <!-- Chart title (centered) -->
-        <text x="250" y="30" font-size="14" fill="#000" text-anchor="middle">
+        <text x="250" y="25" font-size="14" fill="#000" text-anchor="middle">
           Snapshot comparison (bar chart)
         </text>
 
         <!-- Y-axis label -->
-        <text x="25" y="180" font-size="12" fill="#000" text-anchor="middle" transform="rotate(-90 25,180)">
+        <text x="25" y="160" font-size="12" fill="#000" text-anchor="middle" transform="rotate(-90 25,160)">
           Consumption (kWh)
         </text>
 
         <!-- X-axis label -->
-        <text x="250" y="325" font-size="12" fill="#000" text-anchor="middle">
+        <text x="250" y="295" font-size="12" fill="#000" text-anchor="middle">
           Mini-Grids (MG)
         </text>
 
         <!-- Common baseline / X-axis -->
-        <line x1="75" y1="280" x2="425" y2="280" stroke="#000" stroke-width="1"/>
+        <line x1="35" y1="280" x2="465" y2="280" stroke="#000" stroke-width="1"/>
 
         <!-- Bars -->
-        <g transform="translate(75,0)">
-          <rect x="0"   y="120" width="50" height="160" fill="rgb(44,236,255)"/>
-          <rect x="70"  y="60"  width="50" height="220" fill="rgb(44,236,255)"/>
-          <rect x="140" y="140" width="50" height="140" fill="rgb(44,236,255)"/>
-          <rect x="210" y="20"  width="50" height="260" fill="rgb(44,236,255)"/>
-          <rect x="280" y="90"  width="50" height="190" fill="rgb(44,236,255)"/>
+        <g transform="translate(40,0)">
+          <!-- Bars and labels -->
+          <rect x="0"   y="120" width="30" height="160" fill="rgb(44,236,255)"/>
+          <rect x="40"  y="80"  width="30" height="200" fill="rgb(44,236,255)"/>
+          <rect x="80"  y="140" width="30" height="140" fill="rgb(44,236,255)"/>
+          <rect x="120" y="50"  width="30" height="230" fill="rgb(44,236,255)"/>
+          <rect x="160" y="100" width="30" height="180" fill="rgb(44,236,255)"/>
+          <rect x="200" y="130" width="30" height="150" fill="rgb(44,236,255)"/>
+          <rect x="240" y="70"  width="30" height="210" fill="rgb(44,236,255)"/>
+          <rect x="280" y="110" width="30" height="170" fill="rgb(44,236,255)"/>
+          <rect x="320" y="90"  width="30" height="190" fill="rgb(44,236,255)"/>
+          <rect x="360" y="60"  width="30" height="220" fill="rgb(44,236,255)"/>
 
           <!-- Mini-grid labels -->
-          <text x="25"  y="295" font-size="11" text-anchor="middle">MG-01</text>
-          <text x="95"  y="295" font-size="11" text-anchor="middle">MG-02</text>
-          <text x="165" y="295" font-size="11" text-anchor="middle">MG-03</text>
-          <text x="235" y="295" font-size="11" text-anchor="middle">MG-04</text>
-          <text x="305" y="295" font-size="11" text-anchor="middle">MG-05</text>
+          <text x="15"  y="295" font-size="10" text-anchor="middle">MG-01</text>
+          <text x="55"  y="295" font-size="10" text-anchor="middle">MG-02</text>
+          <text x="95"  y="295" font-size="10" text-anchor="middle">MG-03</text>
+          <text x="135" y="295" font-size="10" text-anchor="middle">MG-04</text>
+          <text x="175" y="295" font-size="10" text-anchor="middle">MG-05</text>
+          <text x="215" y="295" font-size="10" text-anchor="middle">MG-06</text>
+          <text x="255" y="295" font-size="10" text-anchor="middle">MG-07</text>
+          <text x="295" y="295" font-size="10" text-anchor="middle">MG-08</text>
+          <text x="335" y="295" font-size="10" text-anchor="middle">MG-09</text>
+          <text x="375" y="295" font-size="10" text-anchor="middle">MG-10</text>
 
-          <!-- Percentages above bars -->
-          <text x="25"  y="110" font-size="11" fill="green" text-anchor="middle">+15%</text>
-          <text x="95"  y="50"  font-size="11" fill="red" text-anchor="middle">-10%</text>
-          <text x="165" y="130" font-size="11" fill="green" text-anchor="middle">+5%</text>
-          <text x="235" y="10"  font-size="11" fill="green" text-anchor="middle">+20%</text>
-          <text x="305" y="80"  font-size="11" fill="red" text-anchor="middle">-5%</text>
+          <!-- Dummy numbers above bars with percentage -->
+          <text x="15"  y="115" font-size="10" fill="#000" text-anchor="middle">1280 (+5%)</text>
+          <text x="55"  y="75"  font-size="10" fill="#000" text-anchor="middle">1420 (-10%)</text>
+          <text x="95"  y="135" font-size="10" fill="#000" text-anchor="middle">1100 (+2%)</text>
+          <text x="135" y="45"  font-size="10" fill="#000" text-anchor="middle">1600 (+15%)</text>
+          <text x="175" y="95"  font-size="10" fill="#000" text-anchor="middle">1300 (-5%)</text>
+          <text x="215" y="125" font-size="10" fill="#000" text-anchor="middle">1200 (+8%)</text>
+          <text x="255" y="65"  font-size="10" fill="#000" text-anchor="middle">1500 (+12%)</text>
+          <text x="295" y="105" font-size="10" fill="#000" text-anchor="middle">1350 (-3%)</text>
+          <text x="335" y="85"  font-size="10" fill="#000" text-anchor="middle">1400 (+6%)</text>
+          <text x="375" y="55"  font-size="10" fill="#000" text-anchor="middle">1550 (+10%)</text>
         </g>
 
-        <!-- Figure caption (centered at bottom, separate from x-axis) -->
-        <text x="250" y="345" font-size="12" fill="#000" text-anchor="middle">
+        <!-- Figure caption (centered at bottom) -->
+        <text x="250" y="315" font-size="12" fill="#000" text-anchor="middle">
           Figure 3: Snapshot comparison of mini-grid consumption
         </text>
 
       </svg>
     </div>
+
 
 
     <p class="mb-6"></p>
