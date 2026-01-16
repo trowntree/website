@@ -282,7 +282,7 @@
     </h3>
 
     <p class="mb-6">
-      Another common approach is to use bar charts to compare mini-grids either at a single point in time or through short-term changes (e.g. day-on-day, week-on-week, or month-on-month). While changes can be interesting, they are often presented only as percentages or short-term graphs. This makes it difficult to understand longer-term trends or to judge whether performance is improving or deteriorating.
+      Another common approach is to use bar charts to compare mini-grids either at a single point in time or through short-term changes (e.g. day-on-day, week-on-week, or month-on-month). 
     </p>
 
     <!-- Figure -->
@@ -368,10 +368,95 @@
       Figure 3: Snapshot comparison of mini-grid consumption
     </p>
 
-
     <p class="mb-6"></p>
-      Some more text about the current state.. 
+       While changes can be interesting, they are often presented only as percentages or short-term graphs. This makes it difficult to understand longer-term trends or to judge whether performance is improving or deteriorating.
     </p>
+
+    <!-- Section -->
+    <h3 class="text-xl mb-1" style="color: rgb(81,230,0); font-weight: 300;">
+      Example 3 – Change within a single mini-grid
+    </h3>
+
+    <p class="mb-4">
+      Individual line graphs can show how a single mini-grid’s performance changes over time. While this highlights trends for one site, it doesn’t help operators quickly identify which mini-grids need attention across the portfolio.
+    </p>
+
+    <!-- Figure -->
+    <div class="mb-2 p-4 border rounded-lg bg-white">
+
+      <svg viewBox="0 0 500 260" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Background -->
+        <rect x="0" y="0" width="500" height="260" fill="#ffffff"/>
+
+        <!-- Chart title (centered) -->
+        <text x="250" y="20" font-size="14" fill="#000" text-anchor="middle">
+          Energy consumption over time (MG-01)
+        </text>
+
+        <!-- Y-axis label -->
+        <text x="20" y="130" font-size="12" fill="#000" text-anchor="middle" transform="rotate(-90 20,130)">
+          Consumption (kWh)
+        </text>
+
+        <!-- X-axis label -->
+        <text x="250" y="235" font-size="12" fill="#000" text-anchor="middle">
+          Time (days)
+        </text>
+
+        <!-- Baseline / X-axis -->
+        <line x1="50" y1="200" x2="450" y2="200" stroke="#000" stroke-width="1"/>
+
+        <!-- Line chart -->
+        <polyline 
+          fill="none" 
+          stroke="rgb(44,236,255)" 
+          stroke-width="2" 
+          points="
+            50,180 
+            90,165 
+            130,175 
+            170,155 
+            210,160 
+            250,150 
+            290,165 
+            330,155 
+            370,170 
+            410,180 
+            450,180
+          "/>
+
+        <!-- Points -->
+        <circle cx="50"  cy="180" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="90"  cy="165" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="130" cy="175" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="170" cy="155" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="210" cy="160" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="250" cy="150" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="290" cy="165" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="330" cy="155" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="370" cy="170" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="410" cy="180" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="450" cy="180" r="3" fill="rgb(44,236,255)"/>
+
+        <!-- End point label -->
+        <text x="450" y="170" font-size="9" fill="#000" text-anchor="middle">120 (+5%)</text>
+
+      </svg>
+    </div>
+
+    <!-- Figure caption outside the box -->
+    <p class="text-sm text-center mb-4">
+      Figure 4: Line chart showing MG-01 energy consumption over time
+    </p>
+
+    <!-- Comments on the figure -->
+    <p class="mb-8">
+      While this chart highlights the trend within MG-01, it doesn’t provide context across the portfolio. Operators can see that consumption increased by 5% at the end, but there’s no quick way to know which other mini-grids are performing poorly this week. To prioritize maintenance or interventions effectively, a view that compares multiple sites simultaneously would be more actionable.
+    </p>
+
+
+
 
 
     <h2 class="text-xl font-semibold mb-1" style="color: rgb(81,230,0);">
