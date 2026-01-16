@@ -407,40 +407,40 @@
         <!-- Baseline / X-axis -->
         <line x1="50" y1="200" x2="450" y2="200" stroke="#000" stroke-width="1"/>
 
-        <!-- Line chart -->
+        <!-- Line chart with larger fluctuations to reach top -->
         <polyline 
           fill="none" 
           stroke="rgb(44,236,255)" 
           stroke-width="2" 
           points="
-            50,180 
-            90,165 
-            130,175 
-            170,155 
-            210,160 
-            250,150 
-            290,165 
-            330,155 
-            370,170 
-            410,180 
-            450,180
+            50,190
+            90,100
+            130,180
+            170,70
+            210,150
+            250,90
+            290,180
+            330,110
+            370,200
+            410,130
+            450,136
           "/>
 
         <!-- Points -->
-        <circle cx="50"  cy="180" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="90"  cy="165" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="130" cy="175" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="170" cy="155" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="210" cy="160" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="250" cy="150" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="290" cy="165" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="330" cy="155" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="370" cy="170" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="410" cy="180" r="3" fill="rgb(44,236,255)"/>
-        <circle cx="450" cy="180" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="50"  cy="190" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="90"  cy="100" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="130" cy="180" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="170" cy="70"  r="3" fill="rgb(44,236,255)"/>
+        <circle cx="210" cy="150" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="250" cy="90"  r="3" fill="rgb(44,236,255)"/>
+        <circle cx="290" cy="180" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="330" cy="110" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="370" cy="200" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="410" cy="130" r="3" fill="rgb(44,236,255)"/>
+        <circle cx="450" cy="136" r="3" fill="rgb(44,236,255)"/>
 
         <!-- End point label -->
-        <text x="450" y="170" font-size="9" fill="#000" text-anchor="middle">120 (+5%)</text>
+        <text x="450" y="125" font-size="9" fill="#000" text-anchor="middle">120 (+5%)</text>
 
       </svg>
     </div>
@@ -451,9 +451,15 @@
     </p>
 
     <!-- Comments on the figure -->
-    <p class="mb-8">
+    <p class="mb-4">
       While this chart highlights the trend within MG-01, it doesn’t provide context across the portfolio. Operators can see that consumption increased by 5% at the end, but there’s no quick way to know which other mini-grids are performing poorly this week. To prioritize maintenance or interventions effectively, a view that compares multiple sites simultaneously would be more actionable.
     </p>
+
+    <!-- Principle box -->
+    <div class="mb-8 p-4 border rounded-lg" style="border-color: rgb(44,236,255); background-color: #f0f0f0;">
+      <strong>Principle:</strong> we need both a time-trend and a comparison between mini-grids, as well as absolute numbers in one view to know where to act.
+    </div>
+
 
 
 
