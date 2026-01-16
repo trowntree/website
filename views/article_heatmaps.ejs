@@ -236,7 +236,7 @@
     </h2>
 
     <p class="mb-4">
-      This above example, while from a totally different field, raises important questions: are we getting the presentation our energy access metrics right? And, are there insights about a mini-grid portfolio that we uncover by visualising the same information differently? To start answering that question, consider a few typical ways of presenting portfolio performance; 
+      The above example, while from a totally different field, raises important questions: are we getting the presentation our energy access metrics right? And, are there insights about a mini-grid portfolio that we uncover by visualising the same information differently? To start answering that question, consider a few typical ways of presenting portfolio performance.  
     </p>
 
     <!-- Section -->
@@ -245,7 +245,7 @@
     </h3>
 
     <p class="mb-8">
-      One popular view in platforms tends to be portfolio aggregates. It shows the total or average of a metric, for example the energy consumption, the active customers or the ARPU as a single number or chart. 
+      A popular component of a view in operator platforms tends to be portfolio aggregates. It shows the total or average of a metric, for example the active customers, energy consumption, or ARPU in one single number. It often appears on user interfaces (UI’s) something like below:    
     </p>
 
     <!-- Cards row -->
@@ -272,7 +272,7 @@
     </div>
 
     <p class="mb-6"></p>
-      Interesting, but can't act on it. 
+      They provide a simple and clear overview of the current status of the portfolio, a portfolio segment, or individual mini-grid. It seems handy at first glance, but challenges in actionability remain. Even if a percentage change with the previous day, week or month is included, it is hard to determine if what is being looked at is good, bad, or something in between. Much less so, it is a view that guides where to act. For more granular insights, metrics are sometimes broken down by mini-grid site, see example 2. 
     </p>
 
 
@@ -282,7 +282,7 @@
     </h3>
 
     <p class="mb-6">
-      Another common approach is to use bar charts to compare mini-grids either at a single point in time or through short-term changes (e.g. day-on-day, week-on-week, or month-on-month). 
+      Rather than presenting a single number, it is helpful to break things down by site, an example of which is shown in figure 2. This makes it clear how an aggregate number is built up.    
     </p>
 
     <!-- Figure -->
@@ -368,8 +368,12 @@
       Figure 3: Snapshot comparison of mini-grid consumption
     </p>
 
+    <p class="mb-4"></p>
+      However, even such a view has its challenges. While it is clear what the differences are between sites, and there is a hint of the change in performance compared to a previous datapoint (the %, in brackets above the bars), you can still not really see how the site is performing. If a metric like consumption is X this week, and you know it’s 15% more than last week, that could still mean a variety of things. It could be that last week’s consumption (or any metric for that matter) was below expected; it could mean this weeks consumption is particularly good; it could be that both this & the last week the site has not been performing; it could even mean that everything is just fine.     
+    </p>
+
     <p class="mb-6"></p>
-       While changes can be interesting, they are often presented only as percentages or short-term graphs. This makes it difficult to understand longer-term trends or to judge whether performance is improving or deteriorating.
+      The breakdown by mini-grid helps uncover some information, but it is not exactly a highly actionable visualisation that shows where to send operational resources.     
     </p>
 
     <!-- Section -->
@@ -378,7 +382,7 @@
     </h3>
 
     <p class="mb-6">
-      Individual line graphs can show how a single mini-grid’s performance changes over time. While this highlights trends for one site, it doesn’t help operators quickly identify which mini-grids need attention across the portfolio.
+      To gain a better insight on the performance of a site over time, metrics are often plotted in a simple graph over time. An example for the energy consumption metric is shown below in Figure 4.    
     </p>
 
     <!-- Figure -->
@@ -479,8 +483,12 @@
     </p>
 
     <!-- Comments on the figure -->
+    <p class="mb-4">
+      Such a view is useful to better understand the dynamics of a metric within a site. We can see whether it’s at a high or low point in its history, which is great. Yet again, however, there are limitations. While we can now easily track the metric for a site over time, we have lost the comparison with the other grids in the portfolio. Say, we spot a moderate decline in energy consumption with a graph like figure 4, it isn’t immediately obvious from this chart that there aren’t other places in the portfolio that require more attention (perhaps 2 grids went off elsewhere..).    
+    </p>
+
     <p class="mb-6">
-      While this chart highlights the trend within MG-01, it doesn’t provide context across the portfolio. Operators can see that consumption increased by 5% at the end, but there’s no quick way to know which other mini-grids are performing poorly this week. To prioritize maintenance or interventions effectively, a view that compares multiple sites simultaneously would be more actionable.
+      Of course, one could navigate to the graph for the next grid and make O&M plans like that, but that’s not a scalable approach. In all likelihood, mini-grid developers will have hundreds of sites under management in a few years. For scale, we need an interface that it is simple, intuitive, and actionable for all levels of staff.     
     </p>
 
     <!-- Principle box -->
