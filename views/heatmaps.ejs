@@ -303,7 +303,7 @@
 
         <!-- Chart title (centered) -->
         <text x="250" y="20" font-size="14" fill="#000" text-anchor="middle">
-          Energy Consumption per Mini-Grid (MG)
+          Average Daily Energy Consumption per Mini-Grid (MG)
         </text>
 
         <!-- Y-axis label -->
@@ -373,16 +373,16 @@
 
     <!-- Figure caption outside the box -->
     <p class="text-sm text-center mb-8">
-      Figure 2: Barchart showing mini-grid Consumption (in kWh/day), as well as a percentage change with respect to a previous timeframe (for example a day, week, or month). 
+      Figure 2: Bar chart showing mini-grid energy consumption (in kWh/day), as well as a percentage change with respect to a previous timeframe (for example a day, week, or month). 
     </p>
 
     <p class="mb-4"></p>
-      This view, however, also has its challenges. Although it clarifies differences between sites and gives a rough indication of performance changes compared to a previous data point (the percentages shown above the bars), it is still difficult to understand what is going on in the portfolio. If a metric such as energy consumption is X this week, and you know it is 15% higher than last week, that could still mean a variety of things. It could be that last week’s consumption was below expectation; it could mean this weeks consumption is particularly strong; it could be that the site underperformed in both weeks - or that, in fact, performance has been perfectly normal throughout.    
+      This view, however, also has its limitations. Although it clarifies differences between sites and gives a rough indication of performance changes compared to a previous data point (the percentages shown above the bars), it is still difficult to understand what is going on in the portfolio. Take mini-grid MG-04 for example; if a metric such as energy consumption has averaged X this week, and is 15% higher than last week, that could still mean a variety of things. It could be that last week’s consumption was below expectation; it could mean this weeks consumption is particularly strong; it could be that the site underperformed in both weeks - or that, in fact, performance has been perfectly normal throughout.    
     </p>
     
 
     <p class="mb-6"></p>
-      The breakdown by mini-grid definitely helps uncover some dynamics, but it is not exactly a highly actionable visualisation that shows where to send operational resources.     
+      The breakdown by mini-grid definitely helps uncover some dynamics, but it is not yet a highly actionable visualisation that shows where to send operational resources.     
     </p>
 
     <!-- Section -->
@@ -404,7 +404,7 @@
 
         <!-- Chart title (centered) -->
         <text x="250" y="20" font-size="14" fill="#000" text-anchor="middle">
-          Energy consumption over time (MG-01)
+          Daily Energy Consumption vs Time (MG-01)
         </text>
 
         <!-- Y-axis label -->
@@ -493,15 +493,15 @@
 
     <!-- Comments on the figure -->
     <p class="mb-4">
-      This is a useful graph to better understand the dynamics within a site. We can see whether the metric is at a high or low point relative to other timestamps, which is great. Crucially, however, we have lost the comparison with the other grids in the portfolio. If a graph like <em>Figure 3</em> shows a moderate drop in energy consumption — potentially signaling the need for O&M action — it doesn’t immediately reveal whether other parts of the portfolio might need even more urgent attention (for example, if two other grids went offline). 
+      This is a useful graph to better understand the dynamics within a site. We can see whether the metric is at a high or low point relative to other timestamps. Crucially, however, we have lost the comparison with the other grids in the portfolio. If a graph like <em>Figure 3</em> shows a moderate drop in energy consumption - potentially signaling the need for O&M action - it doesn’t immediately reveal whether other parts of the portfolio might need even more urgent attention (for example, if two other grids went offline). 
     </p>
 
     <p class="mb-6">
-      Of course, one could plot multiple sites together in one graph, or navigate to this same graph for the next mini-grid, but that’s not an approach which works at scale. Mini-grid developers will have hundreds of sites under management in a few years. For scale, we need data visualisations that are actionable at a glance.        
+      Of course, one could plot multiple sites together in one graph, or navigate to this same graph for the next mini-grid, but that’s not an approach which works at scale. Mini-grid developers could have hundreds of sites under management. For scale, we need data visualisations that are actionable at a glance.        
     </p>
 
     <p class="mb-6">
-      The crux of the matter is the following; effective priortisation of O&M issues cannot be done without the inter-grid comparisons, but we need to keep the picture over time to put the data into its context. The bar graph in <em>Figure 2</em> gives the inter-grid comparison, but not the time trend; the chart in <em>Figure 3</em> gives the time trend, but not the comparison. 
+      The crux of the matter is the following; effective priortisation of O&M issues cannot be done without the inter-grid comparisons, but we need to keep the picture over time to put the data into its context. The example of the bar graph in <em>Figure 2</em> gives the inter-grid comparison, but not the time trend; the chart in <em>Figure 3</em> gives the time trend, but not the comparison. 
     </p>
 
     <!-- Principle box -->
@@ -523,7 +523,7 @@
     </p>
 
     <p class="mb-4">
-      They can be made for any metric - energy consumption, ACPU, ARPU and so on - provided the data is available to the operator (which can be a challenge in its own right). The objective is to create a visualisation that conveys, at a glance, the information needed to guide effective action. It should make it immediately clear to operational teams where attention and resources are most urgently required.    
+      They can be made for any metric - energy consumption, ACPU, ARPU and so on - provided the data is available to the operator (which can be a challenge in its own right). The objective is to create a visualisation that conveys, at a glance, the information needed to guide effective action. It should make it immediately clear to operational teams where attention and resources are most urgently across the portfolio of assets.    
     </p>
 
     <!-- Section  -->
@@ -541,7 +541,7 @@
     </figure>
 
     <p class="mb-4">
-      The heatmap colouring can be applied in two ways. <em>Row-based</em> colouring is useful to highlight changes <em>within</em> a single mini-grid over time. This is useful for metrics like, for example, active customers or energy consumption. <em>Global colouring</em> across the entire sheet is better when you want to compare a metric <em>between</em> mini-grids. The example in the figure is coloured per row, to put the emphasis on how the energy consumption metric fluctuates over time for a mini-grid. It is true that you would still see within-row colour differences if the sheet is coloured globally, but it would primarily highlight consumption differences between mini-grids, which is driven largely by different installed photovoltaic (PV) capacities, rather than mini-grid performance.     
+      The heatmap colouring can be applied in two ways. <em>Row-based</em> colouring is useful to highlight changes <em>within</em> a single mini-grid over time. This is useful for metrics like, for example, active customers or energy consumption. <em>Global colouring</em> across the entire sheet makes it easier to compare a metric <em>between</em> mini-grids. The example in the figure is coloured per row, to put the emphasis on how the energy consumption metric fluctuates over time for a mini-grid. It is true that you would still see within-row colour differences if the sheet is coloured globally, but it would primarily highlight consumption differences between mini-grids, which is driven largely by different installed photovoltaic (PV) capacities, rather than mini-grid performance. Small sites would then appear red, larger ones green, which makes it harder to spot the issues accross the sites.     
     </p>
 
     <p class="mb-6">
