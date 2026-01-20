@@ -15,7 +15,7 @@ const articles = [
   {
     title: 'Heatmaps',
     summary: 'An intuitive framework for turning operational mini-grid data into action.',
-    link: '/article_heatmaps',
+    link: '/heatmaps',
     image: '/images/com2.png'
   },
   {
@@ -51,8 +51,8 @@ app.get('/gallery', (req, res) => {
 });
 
 // Routes for articles
-app.get('/article_heatmaps', (req, res) => {
-  res.render('article_heatmaps');
+app.get('/heatmaps', (req, res) => {
+  res.render('heatmaps');
 });
 
 app.get('/article_capacity_utilisation', (req, res) => {
